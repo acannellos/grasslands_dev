@@ -1,0 +1,50 @@
+[gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://cjyo44bkawm7q"]
+
+[ext_resource type="Shader" uid="uid://cn05felbh2lgi" path="res://scenes/game/grassblade.gdshader" id="1_l475t"]
+
+[sub_resource type="Gradient" id="Gradient_l475t"]
+offsets = PackedFloat32Array(0, 0.350877, 1)
+colors = PackedColorArray(0, 0.14902, 0, 1, 0, 0.526792, 0, 1, 1, 0.683747, 0.257951, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gk8py"]
+gradient = SubResource("Gradient_l475t")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gk8py"]
+render_priority = 0
+shader = ExtResource("1_l475t")
+shader_parameter/gradient = SubResource("GradientTexture1D_gk8py")
+shader_parameter/wind_strength = 0.1
+shader_parameter/wind_speed = 2.0
+shader_parameter/wind_scale = 1.5
+shader_parameter/height_range = 10.0
+shader_parameter/base_height = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xt0v8"]
+_surfaces = [{
+"aabb": AABB(0, -0.2, -0.1, 1e-05, 1.2, 0.2),
+"format": 34359742465,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABgAFAAQABgAGAAUA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 7,
+"vertex_data": PackedByteArray("AAAAAMzMzD7QzEw9AAAAAMzMTL7QzMy9AAAAAMzMTL7QzMw9AAAAAM7MzD7QzEy9AAAAADMzMz/QzMw8AAAAADQzMz/QzMy8AAAAAAAAgD8AAACA")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "grassblade_2_Plane_001"
+_surfaces = [{
+"aabb": AABB(0, -0.2, -0.1, 1e-05, 1.2, 0.2),
+"attribute_data": PackedByteArray("AAAAPwAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAPwAAAAAAAIA+AACAPwAAgD4AAAAAAAAAAAAAgD8AAAAAAAAAAA=="),
+"format": 34359742487,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABgAFAAQABgAHAAUA"),
+"material": SubResource("ShaderMaterial_gk8py"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAMzMzD7QzEw9AAAAAMzMTL7QzMy9AAAAAMzMTL7QzMw9AAAAAM7MzD7QzEy9AAAAADMzMz/QzMw8AAAAADQzMz/QzMy8AAAAAAAAgD8AAACAAAAAAAAAgD8AAACA////f/9/0YD///9//3/qg////3//f+uE////f6OBAID///9//3/RgP///3+PgACA////f/9/64T///9/////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xt0v8")

@@ -17,14 +17,14 @@ void vertex() {
 	float pixel_size = 1.0 / tex_size;
 
 	uv_map_coords = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz * pixel_size + vec2(0.5);
-	
+
 	height = texture(heightmap, uv_map_coords).r;
 	VERTEX.y += height * height_scale;
 }
 
 void fragment() {
 	NORMAL_MAP = texture(normalmap, uv_map_coords).rgb;
-	
+
 	float t_height = clamp(height, 0.01, 0.99);
 	vec3 grad_color = texture(color_gradient, vec2(t_height, 0.5)).rgb;
 	ALBEDO = grad_color;
