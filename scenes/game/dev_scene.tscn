@@ -1,0 +1,112 @@
+[gd_scene load_steps=19 format=3 uid="uid://bipokvwn7h0iu"]
+
+[ext_resource type="PackedScene" uid="uid://dlfg5inwjswqp" path="res://scenes/env/env.tscn" id="1_ajvs4"]
+[ext_resource type="Shader" uid="uid://7o5imgekfmld" path="res://scenes/game/dev_scene_planewip.gdshader" id="1_d2m1d"]
+[ext_resource type="Shader" uid="uid://dd04473c6hyy7" path="res://_dev/terrain_clipmap_island.gdshader" id="2_qpv1s"]
+[ext_resource type="Texture2D" uid="uid://bbpnbet8t314p" path="res://scenes/terrain/data/terrain_heightmap.tres" id="3_ajvs4"]
+
+[sub_resource type="Gradient" id="Gradient_qpv1s"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.11262798, 0.23890784, 0.30546075, 0.43003413, 0.552901, 0.6331058, 0.7337884)
+colors = PackedColorArray(0, 0.101960786, 0.3019608, 1, 0.198, 0.6, 0.47270006, 1, 0.5495, 0.7, 0.399, 1, 0.4, 0.6, 0.3019608, 1, 0.35500002, 0.4, 0.1, 1, 0.5019608, 0.5019608, 0.5019608, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ajvs4"]
+gradient = SubResource("Gradient_qpv1s")
+
+[sub_resource type="Gradient" id="Gradient_ajvs4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lia8f"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1sd31"]
+noise = SubResource("FastNoiseLite_lia8f")
+color_ramp = SubResource("Gradient_ajvs4")
+
+[sub_resource type="Gradient" id="Gradient_d2m1d"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_i3ewy"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qpv1s"]
+noise = SubResource("FastNoiseLite_i3ewy")
+color_ramp = SubResource("Gradient_d2m1d")
+
+[sub_resource type="Gradient" id="Gradient_i3ewy"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qpv1s"]
+gradient = SubResource("Gradient_i3ewy")
+width = 302
+height = 302
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftwou"]
+render_priority = 0
+shader = ExtResource("1_d2m1d")
+shader_parameter/heightmap = SubResource("NoiseTexture2D_qpv1s")
+shader_parameter/heightmap_scale = 1.0
+shader_parameter/height = 40.0
+shader_parameter/vignette = SubResource("GradientTexture2D_qpv1s")
+shader_parameter/gradient = SubResource("GradientTexture1D_ajvs4")
+shader_parameter/band_count = 8
+shader_parameter/gradient_noise = SubResource("NoiseTexture2D_1sd31")
+shader_parameter/gradient_noise_intensity = 0.2000000095
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d2m1d"]
+size = Vector2(300, 300)
+subdivide_width = 299
+subdivide_depth = 299
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rixwf"]
+render_priority = 0
+shader = ExtResource("2_qpv1s")
+shader_parameter/heightmap = ExtResource("3_ajvs4")
+shader_parameter/heightmap_normals_intensity = 0.0
+shader_parameter/heightmap_scale = 1.0
+shader_parameter/heightmap_height_scale = 40.0
+shader_parameter/height_edge_1 = 0.1
+shader_parameter/height_edge_2 = 0.2
+shader_parameter/height_edge_3 = 0.3
+shader_parameter/height_edge_4 = 0.5
+shader_parameter/height_edge_5 = 0.6
+shader_parameter/height_edge_6 = 0.8
+shader_parameter/height_edge_7 = 0.9
+shader_parameter/height_color_1 = Color(0, 0.1, 0.3, 1)
+shader_parameter/height_color_2 = Color(0.2, 0.4, 0.6, 1)
+shader_parameter/height_color_3 = Color(0.7, 0.6, 0.4, 1)
+shader_parameter/height_color_4 = Color(0.4, 0.6, 0.3, 1)
+shader_parameter/height_color_5 = Color(0.2, 0.4, 0.1, 1)
+shader_parameter/height_color_6 = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/height_color_7 = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/height_color_8 = Color(1, 1, 1, 1)
+shader_parameter/flat_uv_scale = 1.0
+shader_parameter/flat_normal_scale = 0.0
+shader_parameter/flat_specular = 0.0
+shader_parameter/flat_roughness = 0.0
+shader_parameter/flat_metallic = 0.0
+shader_parameter/flat_normal_intensity = 0.0
+shader_parameter/vignette_radius = 0.726000034485
+shader_parameter/vignette_intensity = 1.0
+shader_parameter/vignette_noise_scale = 3.42800016283
+shader_parameter/vignette_noise_strength = 0.038000001805
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dmaeq"]
+size = Vector2(301, 301)
+subdivide_width = 300
+subdivide_depth = 300
+
+[node name="dev" type="Node3D"]
+
+[node name="env" parent="." instance=ExtResource("1_ajvs4")]
+
+[node name="dev" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_ftwou")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_d2m1d")
+
+[node name="island" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("ShaderMaterial_rixwf")
+mesh = SubResource("PlaneMesh_dmaeq")

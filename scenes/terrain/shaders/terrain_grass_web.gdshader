@@ -127,4 +127,6 @@ void start() {
 
 	// apply the position
 	TRANSFORM[3].xyz = pos.xyz;
+	
+	
 }

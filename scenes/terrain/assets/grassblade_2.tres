@@ -16,7 +16,7 @@ shader_parameter/gradient = SubResource("GradientTexture1D_gk8py")
 shader_parameter/wind_strength = 0.1
 shader_parameter/wind_speed = 2.0
 shader_parameter/wind_scale = 1.5
-shader_parameter/height_range = 10.0
+shader_parameter/height_range = 4.0
 shader_parameter/base_height = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xt0v8"]

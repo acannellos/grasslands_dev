@@ -3,8 +3,9 @@
 [ext_resource type="FastNoiseLite" uid="uid://3aqv6q0eut1q" path="res://scenes/terrain/data/terrain_noise.tres" id="1_flf76"]
 
 [sub_resource type="Gradient" id="Gradient_flf76"]
+offsets = PackedFloat32Array(0.15187714, 1)
 
 [resource]
-seamless_blend_skirt = 1.0
-color_ramp = SubResource("Gradient_flf76")
 noise = ExtResource("1_flf76")
+color_ramp = SubResource("Gradient_flf76")
+seamless_blend_skirt = 1.0
