@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="grasslands_dev"
+config/name="grasslands_dev_45"
 run/main_scene="uid://qcmq8ta8ryvw"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [physics]

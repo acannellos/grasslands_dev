@@ -28,4 +28,8 @@ void fragment() {
     float t = clamp((world_y - base_height) / height_range, 0.0, 1.0);
     // flip to sample gradient right-to-left
     ALBEDO = texture(gradient, vec2(t, 0.5)).rgb;
+	
+	if (!FRONT_FACING) {
+		NORMAL = -NORMAL;
+	}
 }
