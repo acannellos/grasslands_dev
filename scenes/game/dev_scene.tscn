@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bipokvwn7h0iu"]
+[gd_scene load_steps=14 format=3 uid="uid://bipokvwn7h0iu"]
 
 [ext_resource type="PackedScene" uid="uid://dlfg5inwjswqp" path="res://scenes/env/env.tscn" id="1_ajvs4"]
 [ext_resource type="Shader" uid="uid://7o5imgekfmld" path="res://scenes/game/dev_scene_planewip.gdshader" id="1_d2m1d"]
 [ext_resource type="Shader" uid="uid://dd04473c6hyy7" path="res://_dev/terrain_clipmap_island.gdshader" id="2_qpv1s"]
 [ext_resource type="Texture2D" uid="uid://bbpnbet8t314p" path="res://scenes/terrain/data/terrain_heightmap.tres" id="3_ajvs4"]
+[ext_resource type="Shader" uid="uid://pvf08hg8b2bn" path="res://shaders/outline_depth.gdshader" id="5_lia8f"]
 
 [sub_resource type="Gradient" id="Gradient_qpv1s"]
 interpolation_mode = 2
@@ -68,6 +69,18 @@ size = Vector2(301, 301)
 subdivide_width = 300
 subdivide_depth = 300
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1sd31"]
+render_priority = 0
+shader = ExtResource("5_lia8f")
+shader_parameter/sensitivity = 0.999999977648
+shader_parameter/outline_thickness = 0.12999999709424
+shader_parameter/step_threshold = 0.00999999977648
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ajvs4"]
+flip_faces = true
+size = Vector2(2, 2)
+
 [node name="dev" type="Node3D"]
 
 [node name="env" parent="." instance=ExtResource("1_ajvs4")]
@@ -82,3 +95,12 @@ mesh = SubResource("PlaneMesh_d2m1d")
 visible = false
 material_override = SubResource("ShaderMaterial_rixwf")
 mesh = SubResource("PlaneMesh_dmaeq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 0)
+
+[node name="post" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+material_override = SubResource("ShaderMaterial_1sd31")
+extra_cull_margin = 16000.0
+mesh = SubResource("QuadMesh_ajvs4")

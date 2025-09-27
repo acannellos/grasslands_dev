@@ -64,7 +64,7 @@ void fragment() {
 
     //NORMAL = normal;
 	
-	//ROUGHNESS = 0.0;
+	ROUGHNESS = 0.0;
 	
 	//ALBEDO = normal;
 
