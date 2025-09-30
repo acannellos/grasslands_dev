@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bipokvwn7h0iu"]
+[gd_scene load_steps=18 format=3 uid="uid://bipokvwn7h0iu"]
 
 [ext_resource type="PackedScene" uid="uid://dlfg5inwjswqp" path="res://scenes/env/env.tscn" id="1_ajvs4"]
 [ext_resource type="Shader" uid="uid://7o5imgekfmld" path="res://scenes/game/dev_scene_planewip.gdshader" id="1_d2m1d"]
@@ -20,7 +20,7 @@ render_priority = 0
 shader = ExtResource("1_d2m1d")
 shader_parameter/heightmap = ExtResource("3_ajvs4")
 shader_parameter/heightmap_scale = 1.0
-shader_parameter/height = 40.0
+shader_parameter/height = 60.0
 shader_parameter/gradient = SubResource("GradientTexture1D_ajvs4")
 shader_parameter/band_count = 8
 shader_parameter/gradient_warp = 0.0
@@ -81,6 +81,22 @@ shader_parameter/outline_color = Color(0, 0, 0, 1)
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lia8f"]
+shading_mode = 0
+albedo_color = Color(1, 0.58000004, 0.58000004, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lia8f"]
+material = SubResource("StandardMaterial3D_lia8f")
+size = Vector2(5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sd31"]
+shading_mode = 0
+albedo_color = Color(0.58000004, 0.94400007, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rixwf"]
+material = SubResource("StandardMaterial3D_1sd31")
+size = Vector2(5, 0.2)
+
 [node name="dev" type="Node3D"]
 
 [node name="env" parent="." instance=ExtResource("1_ajvs4")]
@@ -101,6 +117,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 0)
 
 [node name="post" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+layers = 3
 material_override = SubResource("ShaderMaterial_1sd31")
 extra_cull_margin = 16000.0
 mesh = SubResource("QuadMesh_ajvs4")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 255.0
+offset_right = -615.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+cull_mask = 1048574
+
+[node name="bar1" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+transform = Transform3D(0.76604444, 0, 0.6427876, 0, 1, 0, -0.6427876, 0, 0.76604444, 0, 0, -4.2)
+layers = 2
+mesh = SubResource("QuadMesh_lia8f")
+
+[node name="bar2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+transform = Transform3D(0.7660444, 0, 0.6427875, 0, 1, 0, -0.6427875, 0, 0.7660444, 0, -0.70000005, -4.2)
+layers = 2
+mesh = SubResource("QuadMesh_rixwf")
