@@ -1,10 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://yrxnx8s4qebt"]
+[gd_scene load_steps=7 format=3 uid="uid://yrxnx8s4qebt"]
 
 [ext_resource type="Script" uid="uid://bdbp8tsexxhog" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="Shader" uid="uid://pvf08hg8b2bn" path="res://shaders/outline_depth.gdshader" id="2_dovo2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8afob"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gmlin"]
+render_priority = 0
+shader = ExtResource("2_dovo2")
+shader_parameter/sensitivity = 0.999999977648
+shader_parameter/outline_thickness = 1.999999955296
+shader_parameter/step_threshold = 0.08999999798832
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_8afob"]
+material = SubResource("ShaderMaterial_gmlin")
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_8afob")
@@ -21,6 +35,10 @@ shape = SubResource("SphereShape3D_8afob")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="camera" type="Camera3D" parent="head"]
+
+[node name="post" type="MeshInstance3D" parent="head/camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+mesh = SubResource("QuadMesh_8afob")
 
 [node name="states" type="Node" parent="."]
 

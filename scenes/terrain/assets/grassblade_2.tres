@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://cjyo44bkawm7q"]
 
-[ext_resource type="Shader" uid="uid://cn05felbh2lgi" path="res://scenes/game/grassblade.gdshader" id="1_l475t"]
+[ext_resource type="Shader" uid="uid://cn05felbh2lgi" path="res://scenes/terrain/shaders/grassblade.gdshader" id="1_l475t"]
 
 [sub_resource type="Gradient" id="Gradient_l475t"]
 offsets = PackedFloat32Array(0, 0.350877, 1)

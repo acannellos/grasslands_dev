@@ -62,7 +62,7 @@ void fragment() {
     // Cross product gives the normal
     vec3 normal = normalize(cross(dx, dy));
 
-    //NORMAL = normal;
+    NORMAL = normal;
 	
 	ROUGHNESS = 0.0;
 	
