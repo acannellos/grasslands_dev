@@ -6,7 +6,6 @@ group_uniforms heightmap;
 uniform sampler2D heightmap : source_color;
 //uniform sampler2D normalmap : source_color;
 uniform sampler2D vignette : source_color;
-uniform float heightmap_scale = 1.0;
 uniform float height = 40.0;
 
 group_uniforms gradient;
@@ -23,9 +22,9 @@ varying vec2 heightmap_uv;
 void vertex() {
 	float heightmap_size = float(textureSize(heightmap, 0).x);
 	heightmap_uv = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz / heightmap_size + vec2(0.5);
-	
+
 	float height_test = texture(heightmap, VERTEX.xz / 2.0 + 0.5).x;
-	
+
 	//heightmap_uv = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz / (heightmap_size * heightmap_scale) + vec2(0.5);
 	//heightmap_uv = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz / (heightmap_size * heightmap_scale) + vec2(0.5);
 	float heightmap_sample = texture(heightmap, heightmap_uv).r;
@@ -68,7 +67,8 @@ void fragment() {
     // Cross product gives the normal
     vec3 normal = normalize(cross(dx, dy));
 
-    NORMAL = normal;
+    //NORMAL = normal;
+	NORMAL = normalize((VIEW_MATRIX * vec4(normal, 0.0)).xyz);
 
 	ROUGHNESS = 0.0;
 

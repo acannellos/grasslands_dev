@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://dl2lap524or3e" path="res://scenes/player/components/player_head.gd" id="2_qek5x"]
 [ext_resource type="Script" uid="uid://cy7yyadvx711" path="res://scenes/player/components/player_input.gd" id="3_gmlin"]
 [ext_resource type="Script" uid="uid://cph1v4x1lu23a" path="res://scenes/player/states/player_controller_state.gd" id="3_p47bc"]
-[ext_resource type="Script" uid="uid://70oxoo2b33fc" path="res://scenes/player/components/controller/player_controller.gd" id="4_0owmy"]
+[ext_resource type="Script" uid="uid://70oxoo2b33fc" path="res://scenes/player/components/player_controller.gd" id="4_0owmy"]
 [ext_resource type="Script" uid="uid://ccr40ys6dd5ls" path="res://scenes/player/states/player_grounded_state.gd" id="4_75vfm"]
-[ext_resource type="Script" uid="uid://5e4dlwxbu3mw" path="res://scenes/player/components/grounded/player_grounded.gd" id="7_0owmy"]
+[ext_resource type="Script" uid="uid://5e4dlwxbu3mw" path="res://scenes/player/components/player_grounded.gd" id="7_0owmy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gmlin"]
 render_priority = 0

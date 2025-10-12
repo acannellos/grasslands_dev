@@ -17,7 +17,15 @@ config/icon="res://assets/textures/icon.svg"
 
 [autoload]
 
-Global="*res://scripts/global/global.gd"
+Global="*res://scripts/globals/global.gd"
+Draw="*res://scripts/globals/draw.gd"
+Events="*res://scripts/globals/events.gd"
+Audio="*res://scripts/globals/audio.gd"
+Scenes="*res://scripts/globals/scenes.gd"
+
+[gui]
+
+theme/custom="uid://7tuvpk0vgkqb"
 
 [input]
 

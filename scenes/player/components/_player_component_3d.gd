@@ -1,3 +1,4 @@
+@abstract
 class_name PlayerComponent3D
 extends Node3D
 
