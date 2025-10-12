@@ -24,13 +24,13 @@ void vertex() {
 	float heightmap_size = float(textureSize(heightmap, 0).x);
 	heightmap_uv = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz / (heightmap_size * heightmap_scale) + vec2(0.5);
 	float heightmap_sample = texture(heightmap, heightmap_uv).r;
-	
+
 	float vignette_size = float(textureSize(vignette, 0).x);
 	vec2 vignette_uv = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz / vignette_size + vec2(0.5);
 	float vignette_sample = texture(vignette, vignette_uv).r;
-	
+
 	t = mix(0.0, heightmap_sample, vignette_sample);
-		
+
 	VERTEX.y += t * height;
 }
 
@@ -42,11 +42,11 @@ vec3 get_stepped_color(float t_input) {
 }
 
 void fragment() {
-	
+
 	float t_mixed = mix(t, 1.0, gradient_warp);
-	
+
 	ALBEDO = get_stepped_color(t_mixed);
-	
+
     vec2 uv = UV;
 
     // Sample neighboring heights
@@ -63,9 +63,9 @@ void fragment() {
     vec3 normal = normalize(cross(dx, dy));
 
     NORMAL = normal;
-	
+
 	ROUGHNESS = 0.0;
-	
+
 	//ALBEDO = normal;
 
 }

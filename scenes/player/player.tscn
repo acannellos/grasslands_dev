@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://yrxnx8s4qebt"]
+[gd_scene load_steps=13 format=3 uid="uid://yrxnx8s4qebt"]
 
 [ext_resource type="Script" uid="uid://bdbp8tsexxhog" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Shader" uid="uid://pvf08hg8b2bn" path="res://shaders/outline_depth.gdshader" id="2_dovo2"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_8afob"]
+[ext_resource type="Script" uid="uid://dl2lap524or3e" path="res://scenes/player/components/player_head.gd" id="2_qek5x"]
+[ext_resource type="Script" uid="uid://cy7yyadvx711" path="res://scenes/player/components/player_input.gd" id="3_gmlin"]
+[ext_resource type="Script" uid="uid://cph1v4x1lu23a" path="res://scenes/player/states/player_controller_state.gd" id="3_p47bc"]
+[ext_resource type="Script" uid="uid://70oxoo2b33fc" path="res://scenes/player/components/controller/player_controller.gd" id="4_0owmy"]
+[ext_resource type="Script" uid="uid://ccr40ys6dd5ls" path="res://scenes/player/states/player_grounded_state.gd" id="4_75vfm"]
+[ext_resource type="Script" uid="uid://5e4dlwxbu3mw" path="res://scenes/player/components/grounded/player_grounded.gd" id="7_0owmy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gmlin"]
 render_priority = 0
@@ -20,8 +22,27 @@ material = SubResource("ShaderMaterial_gmlin")
 flip_faces = true
 size = Vector2(2, 2)
 
-[node name="player" type="CharacterBody3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8afob"]
+
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("input", "head")]
 script = ExtResource("1_8afob")
+input = NodePath("components/PlayerInput")
+head = NodePath("PlayerHead")
+
+[node name="PlayerHead" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+script = ExtResource("2_qek5x")
+camera = NodePath("camera")
+
+[node name="camera" type="Camera3D" parent="PlayerHead"]
+
+[node name="post" type="MeshInstance3D" parent="PlayerHead/camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+layers = 3
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_8afob")
 
 [node name="col_body" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -31,15 +52,30 @@ shape = SubResource("CapsuleShape3D_x7p2l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_8afob")
 
-[node name="head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-
-[node name="camera" type="Camera3D" parent="head"]
-
-[node name="post" type="MeshInstance3D" parent="head/camera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
-mesh = SubResource("QuadMesh_8afob")
+[node name="feet" type="Node3D" parent="."]
 
 [node name="states" type="Node" parent="."]
 
+[node name="PlayerControllerState" type="Node" parent="states" node_paths=PackedStringArray("controller")]
+script = ExtResource("3_p47bc")
+controller = NodePath("../../components/PlayerController")
+metadata/_custom_type_script = "uid://cph1v4x1lu23a"
+
+[node name="PlayerGroundedState" type="Node" parent="states" node_paths=PackedStringArray("grounded")]
+script = ExtResource("4_75vfm")
+grounded = NodePath("../../components/PlayerGrounded")
+metadata/_custom_type_script = "uid://ccr40ys6dd5ls"
+
 [node name="components" type="Node" parent="."]
+
+[node name="PlayerInput" type="Node" parent="components"]
+script = ExtResource("3_gmlin")
+metadata/_custom_type_script = "uid://cy7yyadvx711"
+
+[node name="PlayerController" type="Node" parent="components"]
+script = ExtResource("4_0owmy")
+metadata/_custom_type_script = "uid://70oxoo2b33fc"
+
+[node name="PlayerGrounded" type="Node" parent="components"]
+script = ExtResource("7_0owmy")
+metadata/_custom_type_script = "uid://5e4dlwxbu3mw"

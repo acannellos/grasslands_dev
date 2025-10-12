@@ -5,8 +5,8 @@ extends CharacterBody3D
 #@export var abilities: Array[Ability] = []
 #
 #@export_category("components")
-#@export var input: PlayerInput
-#@export var head: PlayerHead
+@export var input: PlayerInput
+@export var head: PlayerHead
 #@export var pools: PlayerPools
 #
 #@export_category("states")
@@ -21,10 +21,9 @@ extends CharacterBody3D
 	#Events.player_unequip_item_mod.connect(unequip_item_mod)
 	##Global.player = self
 #
-#func _unhandled_input(event: InputEvent) -> void:
-	## FIXME shouldnt be in process for 3d physics interpolation warning
-	#head.handle_camera_input(event)
-#
+func _input(event: InputEvent) -> void:
+	head.handle_camera_input(event)
+
 #func _physics_process(delta: float) -> void:
 	#pools.handle_pools(delta)
 	##controller.handle_controller(delta)

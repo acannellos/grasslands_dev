@@ -18,6 +18,8 @@ var height: float
 func _ready() -> void:
 	create_collision()
 
+
+
 func create_collision() -> void:
 	var mat := grid.get_surface_override_material(0)
 	if mat == null:
@@ -37,38 +39,87 @@ func create_collision() -> void:
 
 	var original_width = hmap_image.get_width()
 	var original_height = hmap_image.get_height()
-	var decimated_width = original_width / collision_decimation
-	var decimated_height = original_height / collision_decimation
 
 	float_array.clear()
 
-	for y in range(decimated_height):
-		for x in range(decimated_width):
-			var sample_x := x * collision_decimation
-			var sample_y := y * collision_decimation
+	for y in range(original_height):
+		for x in range(original_width):
 
-			var heightmap_sample := hmap_image.get_pixel(sample_x, sample_y).r
+			var heightmap_sample := hmap_image.get_pixel(x, y).r
 			
-			var final_sample := heightmap_sample * height
-
-			# Vignette sample if available (same coordinate scaling)
-			if vignette_image:
-				var vignette_sample = vignette_image.get_pixel(sample_x, sample_y).r
-				final_sample *= vignette_sample
-
+			var vignette_sample := vignette_image.get_pixel(x, y).r if vignette_image else 1.0
+			var final_sample := heightmap_sample * vignette_sample * height
+			
 			float_array.push_back(final_sample)
 
 	# Build and assign HeightMapShape3D
 	var shape := HeightMapShape3D.new()
-	shape.map_width = decimated_width
-	shape.map_depth = decimated_height
+	shape.map_width = original_width
+	shape.map_depth = original_height
 	shape.map_data = float_array
 	col.shape = shape
 
-	col.scale.x = grid.scale.x * collision_decimation * heightmap_scale
-	col.scale.z = grid.scale.z * collision_decimation * heightmap_scale
-	
-	#Events.heightmap_finished.emit()
+
+
+
+
+
+
+
+
+
+#
+#func create_collision() -> void:
+	#var mat := grid.get_surface_override_material(0)
+	#if mat == null:
+		#push_error("Grid material not found.")
+		#return
+#
+	#heightmap = mat.get("shader_parameter/heightmap") as NoiseTexture2D
+	#vignette = mat.get("shader_parameter/vignette") as GradientTexture2D
+	#height = mat.get("shader_parameter/height")
+	#heightmap_scale = mat.get("shader_parameter/heightmap_scale")
+#
+	#await get_tree().process_frame
+#
+	#hmap_image = heightmap.get_image()
+	#if vignette:
+		#vignette_image = vignette.get_image()
+#
+	#var original_width = hmap_image.get_width()
+	#var original_height = hmap_image.get_height()
+	#var decimated_width = original_width / collision_decimation
+	#var decimated_height = original_height / collision_decimation
+#
+	#float_array.clear()
+#
+	#for y in range(decimated_height):
+		#for x in range(decimated_width):
+			#var sample_x := x * collision_decimation
+			#var sample_y := y * collision_decimation
+#
+			#var heightmap_sample := hmap_image.get_pixel(sample_x, sample_y).r
+			#
+			#var final_sample := heightmap_sample * height
+#
+			## Vignette sample if available (same coordinate scaling)
+			#if vignette_image:
+				#var vignette_sample = vignette_image.get_pixel(sample_x, sample_y).r
+				#final_sample *= vignette_sample
+#
+			#float_array.push_back(final_sample)
+#
+	## Build and assign HeightMapShape3D
+	#var shape := HeightMapShape3D.new()
+	#shape.map_width = decimated_width
+	#shape.map_depth = decimated_height
+	#shape.map_data = float_array
+	#col.shape = shape
+#
+	#col.scale.x = grid.scale.x * collision_decimation * heightmap_scale
+	#col.scale.z = grid.scale.z * collision_decimation * heightmap_scale
+	#
+	##Events.heightmap_finished.emit()
 
 
 #
