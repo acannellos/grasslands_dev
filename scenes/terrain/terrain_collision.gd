@@ -46,6 +46,10 @@ func create_collision() -> void:
 		for x in range(original_width):
 
 			var heightmap_sample := hmap_image.get_pixel(x, y).r
+			if heightmap.color_ramp:
+				#heightmap_sample = heightmap.color_ramp.sample(heightmap_sample).r
+				heightmap_sample = heightmap.color_ramp.sample(heightmap_sample).srgb_to_linear().r
+				#heightmap_sample = heightmap.color_ramp.sample(heightmap_sample).r
 			
 			var vignette_sample := vignette_image.get_pixel(x, y).r if vignette_image else 1.0
 			var final_sample := heightmap_sample * vignette_sample * height

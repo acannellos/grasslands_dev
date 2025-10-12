@@ -1,9 +1,7 @@
-[gd_resource type="NoiseTexture2D" load_steps=3 format=3 uid="uid://bbpnbet8t314p"]
+[gd_resource type="NoiseTexture2D" load_steps=2 format=3 uid="uid://bbpnbet8t314p"]
 
 [ext_resource type="FastNoiseLite" uid="uid://3aqv6q0eut1q" path="res://scenes/terrain/data/terrain_noise.tres" id="1_flf76"]
-[ext_resource type="Gradient" uid="uid://bof517nps0g17" path="res://scenes/terrain/data/terrain_color_ramp.tres" id="1_lxogg"]
 
 [resource]
 noise = ExtResource("1_flf76")
-color_ramp = ExtResource("1_lxogg")
 seamless_blend_skirt = 1.0
