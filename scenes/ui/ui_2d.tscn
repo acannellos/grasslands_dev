@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://g2ulvmaq7dfi"]
+
+[ext_resource type="Script" uid="uid://ci20mwq786sur" path="res://scenes/ui/2d/fps_label.gd" id="1_7vnik"]
+
+[node name="ui_2d" type="CanvasLayer"]
+
+[node name="fps_label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 14.0
+text = "fps"
+script = ExtResource("1_7vnik")

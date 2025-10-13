@@ -2,6 +2,7 @@
 
 [resource]
 noise_type = 3
+fractal_octaves = 4
 domain_warp_type = 2
 domain_warp_frequency = 0.01
 domain_warp_fractal_octaves = 2
