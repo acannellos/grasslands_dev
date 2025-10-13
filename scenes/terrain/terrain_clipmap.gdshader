@@ -1,10 +1,8 @@
 shader_type spatial;
-//render_mode unshaded;
 render_mode diffuse_toon;
 
 group_uniforms heightmap;
 uniform sampler2D heightmap : source_color;
-//uniform sampler2D normalmap : source_color;
 uniform sampler2D vignette : source_color;
 uniform float height = 40.0;
 
@@ -67,7 +65,6 @@ void fragment() {
     // Cross product gives the normal
     vec3 normal = normalize(cross(dx, dy));
 
-    //NORMAL = normal;
 	NORMAL = normalize((VIEW_MATRIX * vec4(normal, 0.0)).xyz);
 
 	ROUGHNESS = 0.0;

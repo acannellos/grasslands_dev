@@ -26,7 +26,6 @@ func create_collision() -> void:
 
 	heightmap = mat.get("shader_parameter/heightmap") as NoiseTexture2D
 	vignette = mat.get("shader_parameter/vignette") as GradientTexture2D
-	heightmap_scale = mat.get("shader_parameter/heightmap_scale")
 	height = mat.get("shader_parameter/height")
 
 	await get_tree().process_frame

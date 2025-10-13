@@ -22,8 +22,6 @@ func handle_camera_input(event: InputEvent) -> void:
 
 
 
-
-
 #extends Node
 #
 #@onready var Character : CharacterBody3D = self.get_node(^"CharacterBody3D")
