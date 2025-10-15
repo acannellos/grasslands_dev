@@ -1,14 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://duxkidhm42288"]
+[gd_scene load_steps=5 format=3 uid="uid://7smemoeocoph"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77bb2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lia8f"]
 shading_mode = 0
+albedo_color = Color(1, 0.58000004, 0.58000004, 1)
 
-[sub_resource type="QuadMesh" id="QuadMesh_emf0x"]
-size = Vector2(4, 1)
+[sub_resource type="QuadMesh" id="QuadMesh_lia8f"]
+material = SubResource("StandardMaterial3D_lia8f")
+size = Vector2(5, 0.6)
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sd31"]
+shading_mode = 0
+albedo_color = Color(0.58000004, 0.94400007, 1, 1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_77bb2")
-mesh = SubResource("QuadMesh_emf0x")
+[sub_resource type="QuadMesh" id="QuadMesh_rixwf"]
+material = SubResource("StandardMaterial3D_1sd31")
+size = Vector2(5, 0.2)
+
+[node name="3d_progress_bars" type="SubViewportContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.9515944, 0, 0.30735663, 0, 1, 0, -0.30735663, 0, 0.9515944, 0, -0.124, 0)
+cull_mask = 1048574
+
+[node name="bar1" type="MeshInstance3D" parent="SubViewport"]
+transform = Transform3D(0.76604444, 0, 0.6427876, 0, 1, 0, -0.6427876, 0, 0.76604444, 0, 0, -2.557)
+layers = 2
+mesh = SubResource("QuadMesh_lia8f")
+skeleton = NodePath("../Camera3D")
+
+[node name="bar2" type="MeshInstance3D" parent="SubViewport"]
+transform = Transform3D(0.7660444, 0, 0.6427875, 0, 1, 0, -0.6427875, 0, 0.7660444, 0, -0.5, -2.557)
+layers = 2
+mesh = SubResource("QuadMesh_rixwf")
+skeleton = NodePath("../Camera3D")

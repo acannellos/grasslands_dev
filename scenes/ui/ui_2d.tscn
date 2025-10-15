@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://g2ulvmaq7dfi"]
+[gd_scene load_steps=4 format=3 uid="uid://g2ulvmaq7dfi"]
 
 [ext_resource type="Script" uid="uid://ci20mwq786sur" path="res://scenes/ui/2d/fps_label.gd" id="1_7vnik"]
+[ext_resource type="Script" uid="uid://v5gy06lcoe56" path="res://scenes/game/scripts/pause.gd" id="2_eymi1"]
+[ext_resource type="Texture2D" uid="uid://ww1213sad402" path="res://scenes/ui/2d/textures/crosshair001.png" id="3_kqanw"]
 
 [node name="ui_2d" type="CanvasLayer"]
 
@@ -9,3 +11,44 @@ offset_right = 40.0
 offset_bottom = 14.0
 text = "fps"
 script = ExtResource("1_7vnik")
+
+[node name="pause" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_eymi1")
+
+[node name="ColorRect" type="ColorRect" parent="pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.19607843)
+
+[node name="crosshair" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="crosshair"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_kqanw")
