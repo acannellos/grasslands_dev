@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://yrxnx8s4qebt"]
+[gd_scene load_steps=16 format=3 uid="uid://yrxnx8s4qebt"]
 
 [ext_resource type="Script" uid="uid://bdbp8tsexxhog" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Shader" uid="uid://pvf08hg8b2bn" path="res://shaders/outline.gdshader" id="2_dovo2"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://70oxoo2b33fc" path="res://scenes/player/components/player_controller.gd" id="4_0owmy"]
 [ext_resource type="Script" uid="uid://ccr40ys6dd5ls" path="res://scenes/player/states/player_grounded_state.gd" id="4_75vfm"]
 [ext_resource type="Script" uid="uid://5e4dlwxbu3mw" path="res://scenes/player/components/player_grounded.gd" id="7_0owmy"]
+[ext_resource type="Script" uid="uid://drs3jhc52sjen" path="res://_dev/combat/player_combat_component.gd" id="9_5gtgg"]
+[ext_resource type="Script" uid="uid://dn2w4fo0bxkpw" path="res://_dev/combat/ability_data.gd" id="10_je7p5"]
+[ext_resource type="Resource" uid="uid://cv663hdki48bi" path="res://_dev/combat/test_ability.tres" id="11_fm80t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
 
@@ -27,7 +30,6 @@ flip_faces = true
 size = Vector2(2, 2)
 
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("input", "head")]
-floor_max_angle = 0.9075712
 script = ExtResource("1_8afob")
 input = NodePath("components/PlayerInput")
 head = NodePath("head")
@@ -52,6 +54,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 layers = 3
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_8afob")
+
+[node name="RayCast3D" type="RayCast3D" parent="head/camera"]
+target_position = Vector3(0, 0, -100)
+
+[node name="Marker3D" type="Marker3D" parent="head/camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1)
 
 [node name="feet" type="Node3D" parent="."]
 
@@ -80,3 +88,14 @@ metadata/_custom_type_script = "uid://70oxoo2b33fc"
 [node name="PlayerGrounded" type="Node" parent="components"]
 script = ExtResource("7_0owmy")
 metadata/_custom_type_script = "uid://5e4dlwxbu3mw"
+
+[node name="PlayerCombatComponent" type="Node" parent="components" node_paths=PackedStringArray("ability_cooldown", "raycast", "marker")]
+script = ExtResource("9_5gtgg")
+ability_cooldown = NodePath("Timer")
+raycast = NodePath("../../head/camera/RayCast3D")
+marker = NodePath("../../head/camera/Marker3D")
+abilities = Array[ExtResource("10_je7p5")]([ExtResource("11_fm80t")])
+metadata/_custom_type_script = "uid://drs3jhc52sjen"
+
+[node name="Timer" type="Timer" parent="components/PlayerCombatComponent"]
+one_shot = true

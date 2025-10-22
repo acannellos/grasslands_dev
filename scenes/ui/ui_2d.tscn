@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ci20mwq786sur" path="res://scenes/ui/2d/fps_label.gd" id="1_7vnik"]
 [ext_resource type="Script" uid="uid://v5gy06lcoe56" path="res://scenes/game/scripts/pause.gd" id="2_eymi1"]
-[ext_resource type="Texture2D" uid="uid://ww1213sad402" path="res://scenes/ui/2d/textures/crosshair001.png" id="3_kqanw"]
+[ext_resource type="Texture2D" uid="uid://pis4m2ix71fo" path="res://scenes/ui/2d/textures/xhair_thin.png" id="3_kqanw"]
 
 [node name="ui_2d" type="CanvasLayer"]
 
