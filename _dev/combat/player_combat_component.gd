@@ -11,10 +11,10 @@ func _physics_process(delta: float) -> void:
 
 
 func player_use_ability():
-	match ability.input:
+	match ability.input_type:
 		"on_hold":
 			if Input.is_action_pressed("primary"):
-				match ability.hit_type:
+				match ability.combat_type:
 					"hitscan":
 						handle_hitscan()
 					#"projectile":
@@ -24,7 +24,7 @@ func player_use_ability():
 				#_pools.output.update(1)
 		"on_press":
 			if Input.is_action_just_pressed("primary"):
-				match ability.hit_type:
+				match ability.combat_type:
 					"hitscan":
 						handle_hitscan()
 					#"projectile":
@@ -35,7 +35,7 @@ func player_use_ability():
 			#if Input.is_action_pressed("primary"):
 				#is_charging = true
 			if Input.is_action_just_released("primary"):
-				match ability.hit_type:
+				match ability.combat_type:
 					"hitscan":
 						handle_hitscan()
 					#"projectile":

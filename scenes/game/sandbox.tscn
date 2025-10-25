@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bipokvwn7h0iu"]
+[gd_scene load_steps=14 format=3 uid="uid://bipokvwn7h0iu"]
 
 [ext_resource type="PackedScene" uid="uid://mybhwtfghqby" path="res://scenes/ui/ui_3d.tscn" id="1_2l5vf"]
 [ext_resource type="PackedScene" uid="uid://dlfg5inwjswqp" path="res://scenes/env/env.tscn" id="1_ajvs4"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bbpnbet8t314p" path="res://scenes/terrain/data/terrain_heightmap.tres" id="3_ajvs4"]
 [ext_resource type="PackedScene" uid="uid://yrxnx8s4qebt" path="res://scenes/player/player.tscn" id="4_ajvs4"]
 [ext_resource type="Texture2D" uid="uid://cth0x5qolpefq" path="res://_dev/sandbox_gradient.tres" id="6_24y4f"]
+[ext_resource type="Script" uid="uid://df4mjp2smg10y" path="res://_dev/terrain_spawner.gd" id="9_mctbp"]
+[ext_resource type="PackedScene" uid="uid://du1urhfmxaf3o" path="res://_dev/test_random_item.tscn" id="10_76a8v"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_d2m1d"]
 size = Vector2(511, 511)
@@ -63,3 +65,12 @@ debug_color = Color(0, 11.618606, 13.50434, 1)
 [node name="player" parent="." instance=ExtResource("4_ajvs4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 42, 42)
 floor_snap_length = 0.2
+
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("mesh", "col")]
+script = ExtResource("9_mctbp")
+mesh = NodePath("../world/terrain/terrain_mesh")
+col = NodePath("../world/terrain/terrain_body/terrain_col")
+prefab = ExtResource("10_76a8v")
+random_seed = 10
+
+[node name="Spawned" type="Node3D" parent="Node"]

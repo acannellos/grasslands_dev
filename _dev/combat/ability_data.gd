@@ -2,8 +2,9 @@ class_name Ability
 extends Resource
 
 @export var ability_name: String = "hatsu"
-@export_enum("on_press", "on_hold", "on_release") var input: String = "on_press"
-@export_enum("hitscan", "projectile") var hit_type: String = "hitscan"
+@export_enum("on_press", "on_hold", "on_release") var input_type: String = "on_press"
+@export_enum("melee", "hitscan", "projectile") var combat_type: String = "hitscan"
+#@export_enum("hitscan", "projectile") var hit_type: String = "hitscan"
 
 #@export_enum("punch", "beam", "wave", "ball") var type: String = "beam"
 #@export var is_rapid: bool = false
