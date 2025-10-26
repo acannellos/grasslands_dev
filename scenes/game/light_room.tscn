@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://mybhwtfghqby" path="res://scenes/ui/ui_3d.tscn" id="1_x680a"]
 [ext_resource type="PackedScene" uid="uid://g2ulvmaq7dfi" path="res://scenes/ui/ui_2d.tscn" id="2_r0xth"]
-[ext_resource type="Script" uid="uid://52ec0h1n6cga" path="res://scenes/terrain/terrain_collision.gd" id="3_0juc1"]
-[ext_resource type="Shader" uid="uid://6v6sdyaudw5p" path="res://scenes/env/shaders/skybox.gdshader" id="3_r0xth"]
+[ext_resource type="Script" uid="uid://52ec0h1n6cga" path="res://scenes/world/terrain/terrain_collision.gd" id="3_0juc1"]
+[ext_resource type="Shader" uid="uid://6v6sdyaudw5p" path="res://scenes/world/env/shaders/skybox.gdshader" id="3_r0xth"]
 [ext_resource type="PackedScene" uid="uid://yrxnx8s4qebt" path="res://scenes/player/player.tscn" id="4_lunqa"]
-[ext_resource type="Shader" uid="uid://7o5imgekfmld" path="res://scenes/terrain/terrain_clipmap.gdshader" id="5_0juc1"]
+[ext_resource type="Shader" uid="uid://7o5imgekfmld" path="res://scenes/world/terrain/terrain_clipmap.gdshader" id="5_0juc1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0juc1"]
 shader = ExtResource("3_r0xth")

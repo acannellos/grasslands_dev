@@ -14,7 +14,7 @@ func handle_basic_controller(_input_dir: Vector2) -> void:
 	#var _speed: float = _stats.speed.value
 	#var _acceleration: float = _stats.acceleration.value
 	
-	var _speed: float = 60.0
+	var _speed: float = 10.0
 	var _acceleration: float = 0.25
 	
 	player.velocity.x = lerp(player.velocity.x, direction.x * _speed, _acceleration)

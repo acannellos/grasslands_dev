@@ -1,5 +1,4 @@
 @tool
-class_name WorldItemSpawner
 extends Node3D
 
 @export_tool_button("spawn_instances") var _spawn = spawn_instances
