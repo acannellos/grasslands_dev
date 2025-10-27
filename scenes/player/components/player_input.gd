@@ -3,7 +3,7 @@ extends PlayerComponent
 
 #@export var is_toggle_sprint: bool = false
 
-#var is_debug: bool = false
+var is_debug_no_clip: bool = false
 var input_dir: Vector2
 #var is_sprinting: bool = false
 #var is_sliding: bool = false
@@ -11,8 +11,9 @@ var input_dir: Vector2
 var has_jump: bool = false
 
 func _physics_process(delta: float) -> void:
-	#if Input.is_action_just_pressed("debug_no_clip"): # HACK
-		#is_debug = !is_debug
+	
+	if Input.is_action_just_pressed("debug_no_clip"):
+		is_debug_no_clip = !is_debug_no_clip
 	
 	input_dir = Input.get_vector("left", "right", "forward", "backward")
 	

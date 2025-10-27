@@ -1,4 +1,5 @@
 @tool
+class_name Terrain
 extends Node3D
 
 @export var mesh: MeshInstance3D

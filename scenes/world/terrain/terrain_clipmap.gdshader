@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode diffuse_toon;
+render_mode specular_disabled;
 
 group_uniforms heightmap;
 uniform sampler2D heightmap : source_color;
@@ -62,6 +63,7 @@ void fragment() {
 	NORMAL = normalize((VIEW_MATRIX * vec4(normal, 0.0)).xyz);
 
 	ROUGHNESS = 0.0;
+	METALLIC = 0.0;
 
 	//ALBEDO = normal;
 

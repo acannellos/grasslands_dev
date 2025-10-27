@@ -19,8 +19,8 @@ func _ready():
 
 func get_transition():
 	
-	#if _input.is_debug:
-		#return States.DEBUG
+	if _input.is_debug_no_clip:
+		return States.DEBUG
 #
 	#if _input.has_dodge:
 		#return States.DODGING
@@ -72,5 +72,5 @@ func state_logic(delta: float) -> void:
 			#head.lerp_head(0.5, slide_camera_lerp_speed * delta)
 		#States.DODGING:
 			#controller.handle_basic_controller(_input.input_dir)
-		#States.DEBUG:
-			#no_clip.handle_no_clip(_input.is_debug)
+		States.DEBUG:
+			controller.handle_no_clip(_input.input_dir)
