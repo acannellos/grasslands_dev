@@ -1,4 +1,5 @@
 @tool
+class_name Terrain
 extends Node3D
 
 @export var mesh: MeshInstance3D
@@ -56,7 +57,7 @@ func create_collision() -> void:
 				vignette.use_hdr = true
 				vignette_sample = vignette_image.get_pixel(x, y).r
 			
-			var final_sample: float = heightmap_sample * vignette_sample * height / collision_decimation
+			var final_sample: float = heightmap_sample * vignette_sample * height / decimation
 			
 			float_array.push_back(final_sample)
 

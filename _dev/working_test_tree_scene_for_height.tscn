@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgkgkisf7t1tq"]
+
+[ext_resource type="Script" uid="uid://52ec0h1n6cga" path="res://scenes/world/terrain/terrain_collision.gd" id="1_05tvt"]
+[ext_resource type="Shader" uid="uid://7o5imgekfmld" path="res://scenes/world/terrain/terrain_clipmap.gdshader" id="2_sj3sy"]
+[ext_resource type="Script" uid="uid://df4mjp2smg10y" path="res://_dev/world_item_spawner.gd" id="3_y7asf"]
+[ext_resource type="PackedScene" uid="uid://du1urhfmxaf3o" path="res://_dev/test_random_item.tscn" id="4_fohnu"]
+[ext_resource type="PackedScene" uid="uid://yrxnx8s4qebt" path="res://scenes/player/player.tscn" id="5_ho8qd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1kdie"]
+size = Vector2(20, 20)
+subdivide_width = 19
+subdivide_depth = 19
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xc0ub"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hx66t"]
+width = 21
+height = 21
+noise = SubResource("FastNoiseLite_xc0ub")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6mbmf"]
+render_priority = 0
+shader = ExtResource("2_sj3sy")
+shader_parameter/heightmap = SubResource("NoiseTexture2D_hx66t")
+shader_parameter/height = 5.0
+shader_parameter/band_count = 8
+shader_parameter/gradient_warp = 0.0
+shader_parameter/texel_size = 0.001953125
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_ldygn"]
+map_width = 11
+map_depth = 11
+map_data = PackedFloat32Array(0.54901963, 0.54901963, 0.5882353, 0.81372553, 0.7647059, 0.5294118, 0.34313726, 0.09803922, 0.04901961, 0.078431375, 0, 0.64705884, 0.6960785, 0.87254906, 1.0392157, 1.0196079, 0.77450985, 0.5686275, 0.34313726, 0.43137255, 0.4509804, 0.34313726, 1.0686275, 0.91176474, 0.9901961, 1.1764706, 1.1764706, 1.0196079, 0.8333334, 0.7156863, 0.77450985, 0.7647059, 0.63725495, 1.4215686, 1.2254902, 1.1666666, 1.3431373, 1.392157, 1.3627452, 1.2352941, 1.0784314, 0.88235295, 0.87254906, 1.0294118, 1.7941177, 1.6274511, 1.4411765, 1.6176472, 1.6960785, 1.7254902, 1.6862745, 1.4901961, 1.2058823, 1.1470588, 1.3431373, 2, 1.9215686, 1.6568627, 1.6764706, 1.8137255, 1.9117647, 2.009804, 1.9215686, 1.6666667, 1.5784314, 1.6764706, 1.8333334, 1.9607843, 1.9215686, 1.9901961, 2.0392158, 1.9705882, 2.0588236, 2.0490196, 1.9411765, 2.0196078, 2.0784314, 1.8529413, 2.0882354, 2.1666667, 2.3431373, 2.4411764, 2.2058823, 2.1176472, 2.0686274, 1.9313726, 1.9705882, 2.0490196, 1.7450981, 2.0294118, 2.137255, 2.3039217, 2.4705882, 2.1862745, 2.009804, 2.0196078, 1.9705882, 1.9607843, 2.0784314, 1.7647059, 2.0392158, 2.245098, 2.3431373, 2.4019608, 2.137255, 1.8431373, 1.8431373, 2.0392158, 2.1176472, 2.1960785, 2.0588236, 2.0686274, 2.127451, 2.2058823, 2.2941177, 2.245098, 2.0294118, 2.0196078, 2.0980392, 2.2156863, 2.2941177)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="terrain" type="Node3D" parent="world" node_paths=PackedStringArray("mesh", "col")]
+script = ExtResource("1_05tvt")
+mesh = NodePath("terrain_mesh")
+col = NodePath("terrain_body/terrain_col")
+
+[node name="terrain_mesh" type="MeshInstance3D" parent="world/terrain"]
+visible = false
+cast_shadow = 0
+extra_cull_margin = 16384.0
+mesh = SubResource("PlaneMesh_1kdie")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_6mbmf")
+
+[node name="terrain_body" type="StaticBody3D" parent="world/terrain"]
+
+[node name="terrain_col" type="CollisionShape3D" parent="world/terrain/terrain_body"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("HeightMapShape3D_ldygn")
+debug_color = Color(0, 11.618606, 13.50434, 1)
+
+[node name="WorldItemSpawner" type="Node3D" parent="." node_paths=PackedStringArray("terrain_mesh", "terrain_col")]
+script = ExtResource("3_y7asf")
+terrain_mesh = NodePath("../world/terrain/terrain_mesh")
+terrain_col = NodePath("../world/terrain/terrain_body/terrain_col")
+prefab = ExtResource("4_fohnu")
+instance_count = 4
+align_to_normal = false
+is_debug_print = false
+metadata/_custom_type_script = "uid://df4mjp2smg10y"
+
+[node name="player" parent="." instance=ExtResource("5_ho8qd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 42, 42)
+floor_snap_length = 0.2

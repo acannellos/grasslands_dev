@@ -1,5 +1,6 @@
 shader_type spatial;
 render_mode diffuse_toon;
+render_mode specular_disabled;
 
 group_uniforms heightmap;
 uniform sampler2D heightmap : source_color;
@@ -20,11 +21,6 @@ varying vec2 heightmap_uv;
 void vertex() {
 	float heightmap_size = float(textureSize(heightmap, 0).x);
 	heightmap_uv = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz / heightmap_size + vec2(0.5);
-
-	float height_test = texture(heightmap, VERTEX.xz / 2.0 + 0.5).x;
-
-	//heightmap_uv = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz / (heightmap_size * heightmap_scale) + vec2(0.5);
-	//heightmap_uv = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xz / (heightmap_size * heightmap_scale) + vec2(0.5);
 	float heightmap_sample = texture(heightmap, heightmap_uv).r;
 
 	float vignette_size = float(textureSize(vignette, 0).x);
@@ -34,7 +30,6 @@ void vertex() {
 	t = mix(0.0, heightmap_sample, vignette_sample);
 
 	VERTEX.y += t * height;
-	//VERTEX.y += heightmap_sample;
 }
 
 vec3 get_stepped_color(float t_input) {
@@ -68,6 +63,7 @@ void fragment() {
 	NORMAL = normalize((VIEW_MATRIX * vec4(normal, 0.0)).xyz);
 
 	ROUGHNESS = 0.0;
+	METALLIC = 0.0;
 
 	//ALBEDO = normal;
 
