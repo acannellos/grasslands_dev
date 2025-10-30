@@ -92,6 +92,7 @@ one_shot = true
 
 [node name="jump_buffer_timer" type="Timer" parent="states/PlayerGroundedState/PlayerGrounded"]
 wait_time = 0.2
+one_shot = true
 
 [node name="components" type="Node" parent="."]
 

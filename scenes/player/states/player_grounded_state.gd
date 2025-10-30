@@ -13,7 +13,7 @@ func get_transition():
 	
 	match state:
 		States.GROUNDED:
-			if input.has_jump:
+			if can_ground_jump():
 				return States.JUMPING
 			if not player.is_on_floor():
 				return States.COYOTE
@@ -33,23 +33,39 @@ func enter_state(new_state) -> void:
 	match new_state:
 		States.COYOTE:
 			grounded.coyote_timer.start()
+		States.JUMPING:
+			grounded.handle_jump()
 
 func state_logic(delta: float) -> void:
-	print(state)
+	#print(state)
 	
 	match state:
-		States.GROUNDED:
-			grounded.handle_jump(input.has_jump, true)
-		States.COYOTE:
-			grounded.handle_jump(input.has_jump, true)
 		States.JUMPING:
 			grounded.handle_gravity(delta)
 		States.INAIR:
 			grounded.handle_gravity(delta)
+			if input.has_jump:
+				grounded.jump_buffer_timer.start()
+
+func can_ground_jump() -> bool:
+	return input.has_jump or not grounded.jump_buffer_timer.is_stopped()
 
 
 
 
+
+
+
+		#States.GROUNDED:
+			#if input.has_jump or not grounded.jump_buffer_timer.is_stopped():
+			#if can_jump():
+				#
+				#grounded.handle_jump()
+				#grounded.jump_buffer_timer.stop()
+				##set_state(States.JUMPING)
+		#States.COYOTE:
+			#if input.has_jump:
+				#grounded.handle_jump()
 
 #@export var wall_jump: PlayerWallJump
 #@export var coyote_timer: Timer

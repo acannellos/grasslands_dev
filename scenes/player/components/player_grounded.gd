@@ -35,10 +35,15 @@ func handle_gravity(delta: float) -> void:
 	#_stats.remove_stat_modifier(air_acceleration_mod)
 
 
-func handle_jump(has_jump: bool, can_jump: bool) -> void:
-	if has_jump:
-		if can_jump:
-			player.velocity.y = 8.0
+func handle_jump() -> void:
+
+	player.velocity.y = 8.0
+	jump_buffer_timer.stop()
+
+#func handle_jump_buffer() -> void:
+	##if has_jump:
+		##if can_jump:
+	#player.velocity.y = 8.0
 
 			#grounded.execute_jump()
 			#is_jump_buffered = false
