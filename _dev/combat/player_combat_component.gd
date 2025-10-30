@@ -1,4 +1,4 @@
-class_name PlayerCombatComponent
+class_name PlayerCombat
 extends CombatComponent
 
 @onready var player: Player = get_owner()

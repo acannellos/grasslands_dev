@@ -29,9 +29,8 @@ material = SubResource("ShaderMaterial_gmlin")
 flip_faces = true
 size = Vector2(2, 2)
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("input", "head")]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("head")]
 script = ExtResource("1_8afob")
-input = NodePath("components/PlayerInput")
 head = NodePath("head")
 
 [node name="col_body" type="CollisionShape3D" parent="."]
@@ -65,15 +64,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1)
 
 [node name="states" type="Node" parent="."]
 
-[node name="PlayerControllerState" type="Node" parent="states" node_paths=PackedStringArray("controller")]
+[node name="PlayerControllerState" type="Node" parent="states" node_paths=PackedStringArray("input", "controller")]
 script = ExtResource("3_p47bc")
-controller = NodePath("../../components/PlayerController")
+input = NodePath("../../components/PlayerInput")
+controller = NodePath("PlayerController")
 metadata/_custom_type_script = "uid://cph1v4x1lu23a"
 
-[node name="PlayerGroundedState" type="Node" parent="states" node_paths=PackedStringArray("grounded")]
+[node name="PlayerController" type="Node" parent="states/PlayerControllerState"]
+script = ExtResource("4_0owmy")
+metadata/_custom_type_script = "uid://70oxoo2b33fc"
+
+[node name="PlayerGroundedState" type="Node" parent="states" node_paths=PackedStringArray("input", "grounded")]
 script = ExtResource("4_75vfm")
-grounded = NodePath("../../components/PlayerGrounded")
+input = NodePath("../../components/PlayerInput")
+grounded = NodePath("PlayerGrounded")
 metadata/_custom_type_script = "uid://ccr40ys6dd5ls"
+
+[node name="PlayerGrounded" type="Node" parent="states/PlayerGroundedState" node_paths=PackedStringArray("coyote_timer", "jump_buffer_timer")]
+script = ExtResource("7_0owmy")
+coyote_timer = NodePath("coyote_timer")
+jump_buffer_timer = NodePath("jump_buffer_timer")
+metadata/_custom_type_script = "uid://5e4dlwxbu3mw"
+
+[node name="coyote_timer" type="Timer" parent="states/PlayerGroundedState/PlayerGrounded"]
+wait_time = 0.2
+one_shot = true
+
+[node name="jump_buffer_timer" type="Timer" parent="states/PlayerGroundedState/PlayerGrounded"]
+wait_time = 0.2
 
 [node name="components" type="Node" parent="."]
 
@@ -81,15 +99,7 @@ metadata/_custom_type_script = "uid://ccr40ys6dd5ls"
 script = ExtResource("3_gmlin")
 metadata/_custom_type_script = "uid://cy7yyadvx711"
 
-[node name="PlayerController" type="Node" parent="components"]
-script = ExtResource("4_0owmy")
-metadata/_custom_type_script = "uid://70oxoo2b33fc"
-
-[node name="PlayerGrounded" type="Node" parent="components"]
-script = ExtResource("7_0owmy")
-metadata/_custom_type_script = "uid://5e4dlwxbu3mw"
-
-[node name="PlayerCombatComponent" type="Node" parent="components" node_paths=PackedStringArray("ability_cooldown", "raycast", "marker")]
+[node name="PlayerCombat" type="Node" parent="components" node_paths=PackedStringArray("ability_cooldown", "raycast", "marker")]
 script = ExtResource("9_5gtgg")
 ability_cooldown = NodePath("Timer")
 raycast = NodePath("../../head/camera/RayCast3D")
@@ -97,5 +107,5 @@ marker = NodePath("../../head/camera/Marker3D")
 abilities = Array[ExtResource("10_je7p5")]([ExtResource("11_fm80t")])
 metadata/_custom_type_script = "uid://drs3jhc52sjen"
 
-[node name="Timer" type="Timer" parent="components/PlayerCombatComponent"]
+[node name="Timer" type="Timer" parent="components/PlayerCombat"]
 one_shot = true

@@ -5,7 +5,7 @@ extends CharacterBody3D
 #@export var abilities: Array[Ability] = []
 #
 #@export_category("components")
-@export var input: PlayerInput
+#@export var input: PlayerInput
 @export var head: PlayerHead
 #@export var pools: PlayerPools
 #

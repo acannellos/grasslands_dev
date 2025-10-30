@@ -1,24 +1,68 @@
 class_name PlayerGroundedState
 extends PlayerState
 #
+@export var input: PlayerInput
 @export var grounded: PlayerGrounded
+
+enum States {GROUNDED, JUMPING, COYOTE, ONWALL, INAIR}
+
+func _ready():
+	set_state(States.INAIR)
+
+func get_transition():
+	
+	match state:
+		States.GROUNDED:
+			if input.has_jump:
+				return States.JUMPING
+			if not player.is_on_floor():
+				return States.COYOTE
+		States.JUMPING:
+			if player.velocity.y < 0.0:
+				return States.INAIR
+		States.COYOTE:
+			if input.has_jump:
+				return States.JUMPING
+			if grounded.coyote_timer.is_stopped():
+				return States.INAIR
+	
+	if player.is_on_floor():
+		return States.GROUNDED
+
+func enter_state(new_state) -> void:
+	match new_state:
+		States.COYOTE:
+			grounded.coyote_timer.start()
+
+func state_logic(delta: float) -> void:
+	print(state)
+	
+	match state:
+		States.GROUNDED:
+			grounded.handle_jump(input.has_jump, true)
+		States.COYOTE:
+			grounded.handle_jump(input.has_jump, true)
+		States.JUMPING:
+			grounded.handle_gravity(delta)
+		States.INAIR:
+			grounded.handle_gravity(delta)
+
+
+
+
+
 #@export var wall_jump: PlayerWallJump
 #@export var coyote_timer: Timer
 #@export var jump_buffer_timer: Timer
 #@export var wall_jump_timer: Timer
 #
-enum States {GROUNDED, COYOTE, ONWALL, INAIR}
+
 #
 #var was_on_floor_last_frame: bool = false
 #var is_jump_buffered: bool = false
 #
-func _ready():
-	set_state(States.INAIR)
-	##coyote_timer.connect("timeout", _on_coyote_timer_timeout)
-	#jump_buffer_timer.connect("timeout", _on_jump_buffer_timer_timeout)
-#
-func get_transition():
-	#
+
+
 	#if was_on_floor_last_frame and not player.is_on_floor() and not grounded.is_jumping:
 		#was_on_floor_last_frame = player.is_on_floor()
 		#coyote_timer.start()
@@ -26,14 +70,14 @@ func get_transition():
 	#
 	#was_on_floor_last_frame = player.is_on_floor()
 	#
-	if player.is_on_floor():
-		return States.GROUNDED
+
 	#elif player.is_on_wall_only():
 		#return States.ONWALL
 	#elif not coyote_timer.is_stopped():
 		#return States.COYOTE
-	else:
-		return States.INAIR
+	
+	#else:
+		#return States.INAIR
 #
 #func _enter_state(new_state) -> void:
 	#
@@ -53,21 +97,18 @@ func get_transition():
 		#States.INAIR:
 			#grounded.exit_air()
 #
-func state_logic(delta: float) -> void:
-	
-	match state:
+
+
 		#States.ONWALL:
-			#grounded.handle_gravity(delta)
-			#if _input.has_jump:
-				#if can_jump():
-					#grounded.execute_walljump(player.get_wall_normal())
-					#_input.has_jump = false
-					#return
-		States.INAIR:
-			grounded.handle_gravity(delta)
-	#
-	grounded.handle_jump(_input.has_jump, can_jump())
-	_input.has_jump = false
+		#grounded.handle_gravity(delta)
+		#if _input.has_jump:
+			#if can_jump():
+				#grounded.execute_walljump(player.get_wall_normal())
+				#_input.has_jump = false
+				#return
+	
+	#grounded.handle_jump(input.has_jump, can_jump())
+	#input.has_jump = false
 #
 #func _handle_jump() -> void:
 	#if _input.has_jump:
@@ -86,9 +127,9 @@ func state_logic(delta: float) -> void:
 		#emit_ground_jump()
 		#is_jump_buffered = false
 #
-func can_jump() -> bool:
-	#return state == States.GROUNDED or state == States.COYOTE or _stats.jump_phase > 0
-	return state == States.GROUNDED
+#func can_jump() -> bool:
+	##return state == States.GROUNDED or state == States.COYOTE or _stats.jump_phase > 0
+	#return state == States.GROUNDED
 #
 #func buffer_jump() -> void:
 	#is_jump_buffered = true
