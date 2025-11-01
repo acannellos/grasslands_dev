@@ -84,6 +84,7 @@ metadata/_custom_type_script = "uid://ccr40ys6dd5ls"
 script = ExtResource("7_0owmy")
 coyote_timer = NodePath("coyote_timer")
 jump_buffer_timer = NodePath("jump_buffer_timer")
+air_jumps = 10
 metadata/_custom_type_script = "uid://5e4dlwxbu3mw"
 
 [node name="coyote_timer" type="Timer" parent="states/PlayerGroundedState/PlayerGrounded"]

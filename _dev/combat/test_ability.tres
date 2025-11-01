@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_5kktx")
-input = "on_release"
+input_type = "on_hold"
 metadata/_custom_type_script = "uid://dn2w4fo0bxkpw"

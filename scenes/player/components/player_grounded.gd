@@ -9,11 +9,15 @@ extends PlayerComponent
 #
 #var is_jumping: bool = false
 
+@export var air_jumps: int = 1
+
+
 var jump_phase: int = 0
 var was_on_floor_last_frame: bool = false
 var is_jump_buffered: bool = false
 
 func _ready() -> void:
+	jump_phase = air_jumps
 	pass
 	#coyote_timer.connect("timeout", _on_coyote_timer_timeout)
 	#jump_buffer_timer.connect("timeout", _on_jump_buffer_timer_timeout)

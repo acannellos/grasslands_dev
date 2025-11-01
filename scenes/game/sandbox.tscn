@@ -70,604 +70,604 @@ prefab = ExtResource("10_76a8v")
 is_debug_print = false
 metadata/_custom_type_script = "uid://df4mjp2smg10y"
 
-[node name="item_1" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_1" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.94319457, 0.331339, 0.02446318, -0.33224082, 0.94063437, 0.06944823, 0, -0.07363087, 0.9972856, -129.25294, 23.529413, -201.39412)
 
-[node name="item_2" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_2" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99695027, -0.076595046, -0.014943524, 0.078039154, 0.9785018, 0.19090353, 0, -0.1914875, 0.9814951, 17.033333, 19.137255, 189.37059)
 
-[node name="item_3" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_3" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98138475, 0.1920164, -0.0036876986, -0.1920518, 0.98120385, -0.018844143, 0, 0.019201582, 0.99981564, 83.16274, 14.745098, -39.07647)
 
-[node name="item_4" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_4" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9879659, 0.15455624, -0.0059763542, -0.15467174, 0.98722816, -0.038173966, 0, 0.03863895, 0.9992533, 171.3353, 23.686275, -221.43333)
 
-[node name="item_5" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_5" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98138475, -0.19205192, 0, 0.19205192, 0.98138475, 0, 0, 0, 1, -13.02549, 23.058825, -189.37059)
 
-[node name="item_6" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_6" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, 0.03863918, 0.006044558, -0.039109115, 0.98722816, 0.154438, 0, -0.15455624, 0.98798406, -17.033333, 27.92157, -85.166664)
 
-[node name="item_7" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_7" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.93730545, -0.343855, -0.05676464, 0.34850892, 0.92478883, 0.15266699, 0, -0.16287859, 0.9866461, 215.42157, 12.862745, 33.064705)
 
-[node name="item_8" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_8" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99695027, -0.07732143, 0.010559681, 0.07803916, 0.98778135, -0.13489991, 0, 0.13531257, 0.990803, -5.009804, 22.745098, -145.28432)
 
-[node name="item_9" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_9" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9644583, -0.2642353, 0, 0.2642353, 0.9644583, 0, 0, 0, 1, -199.3902, 19.921568, -247.48431)
 
-[node name="item_10" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_10" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99828106, -0.057299346, -0.012313291, 0.058607437, 0.9759999, 0.20973662, 0, -0.21009776, 0.9776804, -237.4647, 12.54902, 103.20196)
 
-[node name="item_11" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_11" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9543137, 0.29751235, -0.02778088, -0.29880658, 0.95018023, -0.0887252, 0, 0.092972785, 0.99566865, -177.34706, 23.372551, -163.31961)
 
-[node name="item_12" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_12" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9644582, -0.2625571, -0.029732946, 0.26423526, 0.95833296, 0.1085252, 0, -0.112524524, 0.99364895, -55.10784, 20.235294, 187.36667)
 
-[node name="item_13" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_13" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98796594, -0.15441224, 0.008956196, 0.15467176, 0.9863083, -0.057207704, 0, 0.05790453, 0.9983222, -217.42549, 14.431373, 119.23333)
 
-[node name="item_14" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_14" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.973517, 0.22857308, -0.0043545812, -0.22861455, 0.97334045, -0.01854326, 0, 0.0190477, 0.9998186, -179.35098, 20.54902, -93.18235)
 
-[node name="item_15" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_15" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99074733, 0.13561697, 0.005258777, -0.13571888, 0.9900034, 0.038389053, 0, -0.03874757, 0.99924904, -239.46863, 18.509804, 221.43333)
 
-[node name="item_16" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_16" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, 0.058067124, 0.007940732, -0.05860756, 0.9890757, 0.135257, 0, -0.1354899, 0.9907788, -205.40196, 17.254902, 37.072548)
 
-[node name="item_17" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_17" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, 0.019472707, 0.0019049869, -0.019565666, 0.99505836, 0.09734512, 0, -0.09736376, 0.99524885, 39.07647, 22.901962, -181.3549)
 
-[node name="item_18" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_18" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9488688, -0.31431875, 0.029182686, 0.31567055, 0.94480544, -0.087719746, 0, 0.09244665, 0.99571764, 5.009804, 28.705883, 5.009804)
 
-[node name="item_19" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_19" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, 0.17142998, 0.026431521, -0.17345564, 0.97334045, 0.15007217, 0, -0.15238205, 0.98832166, -103.20196, 27.764706, 221.43333)
 
-[node name="item_20" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_20" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99828106, 0.053064387, 0.024879767, -0.058607437, 0.9038644, 0.4237858, 0, -0.42451552, 0.90542066, 37.072548, 13.176471, 135.26471)
 
-[node name="item_21" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_21" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98796594, 0.15327431, 0.020743819, -0.15467165, 0.97904044, 0.13250124, 0, -0.13411519, 0.99096584, -19.037254, 16.313726, 237.4647)
 
-[node name="item_22" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_22" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9813848, -0.19078921, -0.02198487, 0.1920517, 0.9749335, 0.11234276, 0, -0.11447371, 0.9934263, -165.32353, 25.568628, -179.35098)
 
-[node name="item_23" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_23" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, 0.09721643, -0.005680289, -0.09738223, 0.99355257, -0.058052596, 0, 0.05832983, 0.9982974, 153.3, 8.470589, 85.166664)
 
-[node name="item_24" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_24" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, -0.037112247, 0.0123371, 0.039109115, 0.9482151, -0.31521198, 0, 0.31545332, 0.9489412, 75.14706, 19.764706, -141.27647)
 
-[node name="item_25" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_25" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, 0.018672103, -0.0058453316, -0.019565666, 0.95414734, -0.29869735, 0, 0.2987545, 0.95433, 117.22941, 12.862745, -175.34314)
 
-[node name="item_26" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_26" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98484164, -0.17090361, 0.029644156, 0.17345552, 0.9703525, -0.16831289, 0, 0.17090349, 0.9852878, -149.29216, 13.490196, -141.27647)
 
-[node name="item_27" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_27" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9879659, 0.15327464, -0.02074386, -0.15467198, 0.9790404, -0.13250121, 0, 0.13411517, 0.9909658, -57.111763, 20.54902, 131.25687)
 
-[node name="item_28" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_28" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98796594, 0.15441224, 0.008956178, -0.15467176, 0.9863083, 0.057207588, 0, -0.057904415, 0.9983222, -55.10784, 21.333334, 221.43333)
 
-[node name="item_29" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_29" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9998086, 0.018565716, 0.0061752796, -0.019565783, 0.9487053, 0.31555587, 0, -0.31561628, 0.948887, -121.23725, 12.54902, 181.3549)
 
-[node name="item_30" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_30" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9969503, -0.07686326, -0.013496268, 0.078039154, 0.9819282, 0.17241485, 0, -0.17294228, 0.98493195, 199.3902, 25.09804, 251.49216)
 
-[node name="item_31" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_31" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9879659, -0.15455624, 0.0059763896, 0.15467174, 0.98722816, -0.038174197, 0, 0.03863918, 0.9992533, 171.3353, 18.666666, 203.39804)
 
-[node name="item_32" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_32" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9969503, 0.077905826, 0.0045597833, -0.078039154, 0.99524707, 0.05825124, 0, -0.05842943, 0.9982916, 99.194115, 24.313726, 63.123528)
 
-[node name="item_33" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_33" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(1, 0, 0, 0, 0.9998086, 0.019565783, 0, -0.019565783, 0.9998086, -25.049019, 13.490196, -169.33138)
 
-[node name="item_34" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_34" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, 0.019532047, 0.0011464725, -0.019565666, 0.9980907, 0.058584925, 0, -0.05859614, 0.9982818, 169.33138, 19.137255, 113.221565)
 
-[node name="item_35" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_35" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.97760606, -0.20858131, 0.027932936, 0.21044336, 0.96895593, -0.12976131, 0, 0.13273375, 0.99115175, 115.22549, 29.333334, 185.36275)
 
-[node name="item_36" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_36" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9543137, 0.29467326, 0.049528357, -0.2988066, 0.9411128, 0.1581812, 0, -0.16575387, 0.9861672, 121.23725, 29.490196, 23.045097)
 
-[node name="item_37" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_37" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9907474, 0.13218828, 0.03075503, -0.13571887, 0.96497405, 0.22451165, 0, -0.22660837, 0.97398597, -145.28432, 29.333334, 95.18627)
 
-[node name="item_38" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_38" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9879659, 0.15285417, -0.023642221, -0.15467174, 0.97635615, -0.15101472, 0, 0.15285417, 0.9882488, -223.43726, 17.568628, 191.37451)
 
-[node name="item_39" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_39" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.96913016, -0.24040249, 0.054711904, 0.24654968, 0.944967, -0.21505994, 0, 0.22191027, 0.97506714, -73.143135, 20.705883, 125.245094)
 
-[node name="item_40" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_40" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, -0.03884245, -0.0045572724, 0.03910888, 0.99242765, 0.11643867, 0, -0.11652782, 0.9931875, -3.0058823, 15.843138, 239.46863)
 
-[node name="item_41" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_41" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, 0.019432459, 0.0022812632, -0.019565905, 0.9929896, 0.11657148, 0, -0.1165938, 0.99317974, 153.3, 16.784313, -53.10392)
 
-[node name="item_42" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_42" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.973517, 0.22795363, -0.017371122, -0.22861455, 0.9707026, -0.07397203, 0, 0.075984314, 0.99710906, 135.26471, 23.843138, 33.064705)
 
-[node name="item_43" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_43" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9907474, 0.13531233, -0.01049396, -0.13571864, 0.98778135, -0.076606005, 0, 0.07732143, 0.99700624, -245.4804, 22.431374, -205.40196)
 
-[node name="item_44" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_44" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.96913016, 0.23714067, -0.0674619, -0.2465498, 0.93214506, -0.2651771, 0, 0.27362385, 0.96183676, 205.40196, 15.215687, 135.26471)
 
-[node name="item_45" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_45" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.973517, 0.22532637, -0.038634676, -0.22861454, 0.9595149, -0.16451935, 0, 0.16899484, 0.985617, -133.26079, 14.27451, -149.29216)
 
-[node name="item_46" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_46" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98484176, 0.17294228, 0.013332348, -0.17345542, 0.9819282, 0.075698145, 0, -0.07686326, 0.9970417, -147.28824, 16.62745, 149.29216)
 
-[node name="item_47" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_47" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, -0.16968426, -0.035973262, 0.17345552, 0.9634293, 0.20424815, 0, -0.20739186, 0.97825795, -111.21764, 9.254902, 147.28824)
 
-[node name="item_48" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_48" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, 0.01771027, 0.0083163455, -0.019565666, 0.9049976, 0.4249665, 0, -0.42504787, 0.9051709, -109.21372, 16, 187.36667)
 
-[node name="item_49" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_49" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, -0.058209043, 0.0068229795, 0.058607556, 0.9914931, -0.11621798, 0, 0.116418086, 0.9932003, -197.38628, 16.941177, 37.072548)
 
-[node name="item_50" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_50" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9969503, 0.07449388, 0.023253756, -0.07803892, 0.9516622, 0.29706764, 0, -0.29797637, 0.95457333, 5.009804, 28.705883, -79.1549)
 
-[node name="item_51" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_51" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9488689, 0.31561616, 0.005860615, -0.31567058, 0.9487053, 0.017616324, 0, -0.018565604, 0.9998277, 25.049019, 25.09804, -63.123528)
 
-[node name="item_52" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_52" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9879659, -0.15455624, 0.0059763542, 0.15467174, 0.98722816, -0.038173966, 0, 0.03863895, 0.9992533, -89.17451, 17.72549, 95.18627)
 
-[node name="item_53" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_53" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.977606, -0.20948736, -0.020038793, 0.2104436, 0.97316384, 0.09308928, 0, -0.095221676, 0.9954561, 137.26863, 18.352942, 247.48431)
 
-[node name="item_54" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_54" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9595149, 0.28165802, 0, -0.28165802, 0.9595149, 0, 0, 0, 1, 101.19804, 10.82353, -61.119606)
 
-[node name="item_55" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_55" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, 0.16575366, -0.051112656, -0.1734554, 0.9411129, -0.29020643, 0, 0.29467317, 0.9555981, 145.28432, 15.372549, 53.10392)
 
-[node name="item_56" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_56" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, -0.17316645, -0.010012233, 0.17345566, 0.98319966, 0.056847177, 0, -0.057722148, 0.99833274, -229.44902, 27.294119, -89.17451)
 
-[node name="item_57" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_57" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, -0.058208928, -0.006822959, 0.058607437, 0.99149317, 0.11621787, 0, -0.116417974, 0.99320036, 25.049019, 10.980392, -217.42549)
 
-[node name="item_58" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_58" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9879659, 0.15327454, -0.020743828, -0.15467186, 0.97904044, -0.13250111, 0, 0.13411507, 0.99096584, 165.32353, 16, 35.068626)
 
-[node name="item_59" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_59" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99828106, -0.05842943, -0.004565877, 0.058607552, 0.99524707, 0.07777203, 0, -0.077905945, 0.9969607, -131.25687, 10.039216, 11.021568)
 
-[node name="item_60" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_60" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, 0.1733267, 0.0066810125, -0.1734554, 0.98411095, 0.037933324, 0, -0.038517177, 0.999258, 167.32745, 21.960785, -237.4647)
 
-[node name="item_61" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_61" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(1, 0, 0, 0, 0.99074745, -0.13571876, 0, 0.13571876, 0.99074745, -139.27255, 13.333334, -25.049019)
 
-[node name="item_62" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_62" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.96913016, -0.24135365, 0.05035096, 0.24654979, 0.9487053, -0.19791798, 0, 0.20422232, 0.9789245, -149.29216, 15.215687, -147.28824)
 
-[node name="item_63" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_63" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9813848, 0.19201629, 0.0036876968, -0.1920517, 0.9812039, 0.018844143, 0, -0.019201584, 0.99981564, 163.31961, 17.568628, 213.41765)
 
-[node name="item_64" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_64" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9998086, -0.019550703, 0.00076504494, 0.019565666, 0.999044, -0.03909392, 0, 0.039101407, 0.9992352, 131.25687, 26.352942, -201.39412)
 
-[node name="item_65" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_65" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, 0.17342344, 0.0033423505, -0.17345564, 0.98465884, 0.018977106, 0, -0.019269194, 0.99981433, -133.26079, 21.333334, -221.43333)
 
-[node name="item_66" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_66" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, -0.019472707, -0.0019049869, 0.019565666, 0.99505836, 0.09734512, 0, -0.09736376, 0.99524885, 245.4804, 16.313726, -101.19804)
 
-[node name="item_67" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_67" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.995247, 0.09347498, 0.027308427, -0.097382344, 0.95531374, 0.27909198, 0, -0.2804248, 0.959876, -129.25294, 15.843138, 187.36667)
 
-[node name="item_68" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_68" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, -0.039101522, -0.0007646084, 0.039108995, 0.999044, 0.019535746, 0, -0.019550703, 0.9998089, -35.068626, 15.529412, -107.2098)
 
-[node name="item_69" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_69" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, -0.05856282, 0.0022881469, 0.0586075, 0.99752, -0.03897477, 0, 0.039041877, 0.99923766, 49.096077, 5.647059, -121.23725)
 
-[node name="item_70" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_70" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, -0.11252442, 0.030618269, 0.116615705, 0.958333, -0.2607656, 0, 0.26255703, 0.96491647, -107.2098, 5.019608, -123.24117)
 
-[node name="item_71" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_71" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, -0.11626475, -0.009038863, 0.11661558, 0.99018925, 0.07698107, 0, -0.07750991, 0.9969916, 155.30392, 26.509804, -163.31961)
 
-[node name="item_72" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_72" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9998086, 0.01896201, -0.004823073, -0.019565783, 0.96895593, -0.24645829, 0, 0.24650547, 0.9691415, 215.42157, 9.725491, 5.009804)
 
-[node name="item_73" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_73" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, -0.11659357, 0.0022661278, 0.11661559, 0.9929896, -0.019299874, 0, 0.019432459, 0.9998112, 57.111763, 23.843138, -175.34314)
 
-[node name="item_74" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_74" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.97351706, -0.22375408, 0.04689064, 0.22861457, 0.95281947, -0.19967598, 0, 0.20510784, 0.97873944, 79.1549, 14.27451, 211.41373)
 
-[node name="item_75" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_75" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, -0.03904176, -0.0022903287, 0.039108884, 0.99752, 0.05851808, 0, -0.05856288, 0.9982838, -249.48824, 23.058825, 161.31569)
 
-[node name="item_76" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_76" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, -0.17032105, 0.03282569, 0.17345543, 0.9670454, -0.18637703, 0, 0.18924567, 0.9819298, -93.18235, 13.0196085, 13.02549)
 
-[node name="item_77" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_77" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9907474, -0.13273363, -0.028308427, 0.13571875, 0.96895593, 0.20665163, 0, -0.20858155, 0.978005, 211.41373, 14.588236, 47.092155)
 
-[node name="item_78" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_78" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, 0.057721917, 0.010148808, -0.05860732, 0.9831997, 0.17286856, 0, -0.17316622, 0.9848926, -131.25687, 17.254902, 189.37059)
 
-[node name="item_79" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_79" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(1, 0, 0, 0, 0.98138475, 0.19205192, 0, -0.19205192, 0.98138475, -111.21764, 29.019608, 219.42941)
 
-[node name="item_80" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_80" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, -0.03790336, -0.009635354, 0.039108884, 0.9684338, 0.24618404, 0, -0.24637252, 0.9691753, 1.0019608, 30.117647, -77.15098)
 
-[node name="item_81" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_81" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9992349, -0.036422513, 0.01424448, 0.03910888, 0.930598, -0.3639476, 0, 0.36422622, 0.93131053, -159.31177, 24, -161.31569)
 
-[node name="item_82" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_82" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, 0.116615705, 0, -0.116615705, 0.9931771, 0, 0, 0, 1, 85.166664, 13.333334, 243.47647)
 
-[node name="item_83" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_83" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98138475, -0.19173382, -0.011046859, 0.19205178, 0.97975993, 0.05644946, 0, -0.057520207, 0.99834436, 185.36275, 14.431373, 81.15882)
 
-[node name="item_84" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_84" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, 0.096221246, 0.014992345, -0.097382225, 0.98338187, 0.15322188, 0, -0.15395363, 0.98807806, 99.194115, 37.80392, 27.05294)
 
-[node name="item_85" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_85" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9813847, 0.19033961, 0.025588559, -0.19205192, 0.97263485, 0.13075747, 0, -0.1332377, 0.9910841, 75.14706, 17.09804, 241.47255)
 
-[node name="item_86" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_86" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9998086, -0.018870635, 0.005169048, 0.019565785, 0.96428657, -0.26413754, 0, 0.2641881, 0.9644712, -83.16274, 12.078432, -221.43333)
 
-[node name="item_87" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_87" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99828106, -0.05842943, -0.0045658704, 0.058607552, 0.99524707, 0.07777192, 0, -0.077905826, 0.99696076, 207.40588, 18.352942, -201.39412)
 
-[node name="item_88" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_88" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931772, -0.11072794, 0.036585767, 0.116615586, 0.943034, -0.31158912, 0, 0.31372967, 0.94951236, 87.170586, 27.137257, 177.34706)
 
-[node name="item_89" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_89" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.973517, -0.22795363, -0.017371172, 0.22861455, 0.9707026, 0.07397224, 0, -0.07598454, 0.997109, -243.47647, 12.078432, 109.21372)
 
-[node name="item_90" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_90" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9969503, 0.07630184, -0.01637496, -0.07803916, 0.9747561, -0.20919013, 0, 0.20983008, 0.97773784, 31.060783, 5.647059, 111.21764)
 
-[node name="item_91" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_91" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.97760606, 0.19897601, -0.06851979, -0.21044338, 0.9243349, -0.31830588, 0, 0.3255973, 0.94550854, -193.37843, 17.72549, 135.26471)
 
-[node name="item_92" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_92" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9691301, -0.24440542, 0.032446653, 0.24654977, 0.96070117, -0.12754029, 0, 0.13160284, 0.99130255, -205.40196, 13.490196, 61.119606)
 
-[node name="item_93" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_93" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.977606, 0.20802133, -0.03183763, -0.2104436, 0.9663535, -0.14790025, 0, 0.1512882, 0.9884897, 23.045097, 24.941177, -57.111763)
 
-[node name="item_94" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_94" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, 0.055620402, 0.018472042, -0.058607556, 0.9474, 0.31464016, 0, -0.3151819, 0.9490313, 85.166664, 18.039215, -17.033333)
 
-[node name="item_95" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_95" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98138475, 0.19117256, 0.018357504, -0.19205192, 0.9768912, 0.093806796, 0, -0.09558616, 0.9954212, 49.096077, 18.82353, -49.096077)
 
-[node name="item_96" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_96" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99828106, -0.057299457, 0.012313323, 0.058607556, 0.97599983, -0.20973673, 0, 0.21009786, 0.9776804, -63.123528, 14.117647, -229.44902)
 
-[node name="item_97" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_97" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99695027, -0.07732143, -0.010559662, 0.07803916, 0.98778135, 0.13489968, 0, -0.13531233, 0.990803, -205.40196, 19.137255, 127.249016)
 
-[node name="item_98" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_98" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(1, 0, 0, 0, 0.96913016, 0.24654979, 0, -0.24654979, 0.96913016, 247.48431, 11.764707, 237.4647)
 
-[node name="item_99" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_99" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, -0.09736376, 0.0018962956, 0.097382225, 0.99505836, -0.019380154, 0, 0.019472707, 0.9998104, 7.0137253, 18.19608, 51.1)
 
-[node name="item_100" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_100" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9992349, 0.038747802, -0.005303851, -0.039109115, 0.9900034, -0.135513, 0, 0.13561673, 0.9907614, -253.49608, 26.509804, -93.18235)
 
-[node name="item_101" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_101" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9998086, 0.018961953, 0.004823057, -0.019565724, 0.96895593, 0.24645823, 0, -0.24650541, 0.9691415, -79.1549, 5.490196, -173.33922)
 
-[node name="item_102" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_102" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9644583, 0.2641881, 0.0049862554, -0.26423517, 0.96428657, 0.018199831, 0, -0.018870521, 0.99982196, 25.049019, 11.450981, -105.20588)
 
-[node name="item_103" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_103" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9249403, 0.38005015, 0.006879112, -0.38011238, 0.92478883, 0.016739177, 0, -0.018097574, 0.99983627, -17.033333, 14.901961, 33.064705)
 
-[node name="item_104" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_104" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9813848, -0.19148773, 0.014710226, 0.19205193, 0.97850174, -0.07516921, 0, 0.076595046, 0.9970623, -47.092155, 10.039216, -191.37451)
 
-[node name="item_105" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_105" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99695027, -0.07732143, -0.010559672, 0.07803916, 0.98778135, 0.1348998, 0, -0.13531245, 0.990803, -103.20196, 8.941176, 19.037254)
 
-[node name="item_106" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_106" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9813848, 0.1863323, 0.04652112, -0.19205192, 0.95215756, 0.23772278, 0, -0.24223201, 0.97021836, 219.42941, 20.862747, -99.194115)
 
-[node name="item_107" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_107" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, 0.09522145, -0.020400347, -0.097382225, 0.97316396, -0.20849168, 0, 0.2094874, 0.97781134, 251.49216, 11.294118, 1.0019608)
 
-[node name="item_108" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_108" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, 0.09721643, 0.0056803008, -0.09738223, 0.99355257, 0.05805271, 0, -0.05832995, 0.9982974, 207.40588, 23.529413, 171.3353)
 
-[node name="item_109" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_109" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98796594, -0.15441224, 0.008956214, 0.15467176, 0.9863083, -0.057207823, 0, 0.05790465, 0.9983222, -221.43333, 20.078432, -7.0137253)
 
-[node name="item_110" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_110" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, -0.058507163, -0.0034289549, 0.058607556, 0.99657106, 0.058406476, 0, -0.058507044, 0.998287, -109.21372, 11.294118, 155.30392)
 
-[node name="item_111" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_111" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, -0.039041877, 0.0022903355, 0.039109, 0.99752, -0.05851808, 0, 0.05856288, 0.9982838, -25.049019, 13.647059, -175.34314)
 
-[node name="item_112" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_112" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.973517, 0.22660837, 0.030220164, -0.22861454, 0.96497405, 0.12868755, 0, -0.13218828, 0.99122465, 139.27255, 17.254902, 81.15882)
 
-[node name="item_113" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_113" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.97760606, -0.20669484, -0.039543245, 0.21044339, 0.9601923, 0.18369651, 0, -0.18790443, 0.9821874, 105.20588, 24.313726, 123.24117)
 
-[node name="item_114" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_114" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9992349, 0.038923398, 0.003805635, -0.039108995, 0.9944929, 0.09723399, 0, -0.097308435, 0.9952543, -239.46863, 13.333334, -39.07647)
 
-[node name="item_115" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_115" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, -0.11356774, -0.026487565, 0.116615705, 0.96721864, 0.22558576, 0, -0.22713548, 0.9738632, 73.143135, 13.333334, 217.42549)
 
-[node name="item_116" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_116" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9969503, 0.0778026, -0.006071649, -0.078039154, 0.9939283, -0.07756533, 0, 0.0778026, 0.9969688, -187.36667, 21.64706, -245.4804)
 
-[node name="item_117" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_117" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9644582, -0.26306647, 0.024825487, 0.26423526, 0.9601922, -0.090612985, 0, 0.09395221, 0.99557674, -93.18235, 17.568628, 157.30785)
 
-[node name="item_118" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_118" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, 0.039041996, 0.0022903425, -0.03910912, 0.99752, 0.05851808, 0, -0.05856288, 0.9982838, -241.47255, 20.54902, 247.48431)
 
-[node name="item_119" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_119" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, 0.056531325, 0.015461407, -0.058607556, 0.962916, 0.26335904, 0, -0.2638125, 0.96457404, -29.056862, 29.490196, -17.033333)
 
-[node name="item_120" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_120" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9907474, -0.13448572, 0.018252222, 0.13571864, 0.98174703, -0.1332414, 0, 0.13448572, 0.99091554, 177.34706, 24.784315, -19.037254)
 
-[node name="item_121" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_121" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9969503, 0.078039154, 0, -0.078039154, 0.9969503, 0, 0, 0, 1, -13.02549, 13.490196, 41.08039)
 
-[node name="item_122" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_122" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.96445835, -0.26423505, 0, 0.26423505, 0.96445835, 0, 0, 0, 1, -177.34706, 17.09804, 139.27255)
 
-[node name="item_123" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_123" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, 0.038990024, 0.0030497306, -0.039109115, 0.9961922, 0.07792039, 0, -0.07798005, 0.996955, -55.10784, 20.078432, 151.29608)
 
-[node name="item_124" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_124" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.973517, 0.2284488, 0.008704426, -0.22861454, 0.97281116, 0.03706635, 0, -0.038074683, 0.9992749, -165.32353, 23.058825, 181.3549)
 
-[node name="item_125" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_125" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, 0.097088285, 0.0075637437, -0.09738247, 0.9922405, 0.07730132, 0, -0.077670485, 0.9969791, -45.088234, 19.921568, -91.17843)
 
-[node name="item_126" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_126" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9992349, 0.039079122, -0.0015283452, -0.039108995, 0.9984717, -0.039049223, 0, 0.039079122, 0.9992361, 39.07647, 16, -245.4804)
 
-[node name="item_127" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_127" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9998086, -0.019565903, 0, 0.019565903, 0.9998086, 0, 0, 0, 1, 93.18235, 31.529411, 165.32353)
 
-[node name="item_128" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_128" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, -0.019472824, 0.0019050007, 0.019565783, 0.99505836, -0.09734524, 0, 0.09736388, 0.99524885, 7.0137253, 13.647059, 157.30785)
 
-[node name="item_129" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_129" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9907474, 0.13031954, 0.03790032, -0.13571888, 0.9513322, 0.2766722, 0, -0.27925608, 0.96021676, -247.48431, 24.313726, -143.2804)
 
-[node name="item_130" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_130" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, -0.11252442, 0.030618265, 0.116615705, 0.958333, -0.26076558, 0, 0.262557, 0.96491647, 247.48431, 12.235294, 173.33922)
 
-[node name="item_131" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_131" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98484176, -0.17230721, -0.019925065, 0.17345542, 0.97832245, 0.113130145, 0, -0.11487139, 0.9933804, 71.13921, 24.941177, -7.0137253)
 
-[node name="item_132" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_132" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, -0.116615824, 0, 0.116615824, 0.9931771, 0, 0, 0, 1, -23.045097, 17.09804, -191.37451)
 
-[node name="item_133" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_133" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, 0.11523109, -0.017917005, -0.1166157, 0.9813849, -0.15259317, 0, 0.15364145, 0.98812675, 51.1, 12.392158, 207.40588)
 
-[node name="item_134" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_134" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, 0.019269196, 0.0033931409, -0.019565666, 0.9846589, 0.17339003, 0, -0.17342322, 0.9848474, 153.3, 22.588236, -29.056862)
 
-[node name="item_135" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_135" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.97760606, -0.20669493, -0.039543286, 0.2104435, 0.9601922, 0.18369661, 0, -0.18790454, 0.98218733, -217.42549, 15.058824, 125.245094)
 
-[node name="item_136" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_136" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, 0.09708805, 0.0075637246, -0.097382225, 0.99224055, 0.07730132, 0, -0.077670485, 0.9969792, 53.10392, 27.137257, -5.009804)
 
-[node name="item_137" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_137" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9907474, 0.13561673, 0.0052587995, -0.13571866, 0.9900034, 0.038389284, 0, -0.038747802, 0.99924904, 205.40196, 16.784313, 151.29608)
 
-[node name="item_138" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_138" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99828106, -0.05859638, 0.0011447394, 0.05860756, 0.9980907, -0.01949871, 0, 0.019532284, 0.9998092, -73.143135, 22.901962, 7.0137253)
 
-[node name="item_139" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_139" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.93730545, 0.3484503, 0.006391456, -0.3485089, 0.93714786, 0.017189652, 0, -0.018339433, 0.99983186, 239.46863, 21.333334, -27.05294)
 
-[node name="item_140" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_140" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, -0.054221943, 0.022244696, 0.058607556, 0.9235796, -0.37890097, 0, 0.37955338, 0.9251699, 67.13137, 20.078432, 91.17843)
 
-[node name="item_141" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_141" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9879659, -0.14855088, 0.043081183, 0.15467174, 0.9488689, -0.27518108, 0, 0.27853298, 0.9604267, 91.17843, 26.980392, 179.35098)
 
-[node name="item_142" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_142" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(1, 0, 0, 0, 0.99524707, 0.097382225, 0, -0.097382225, 0.99524707, -203.39804, 25.568628, -111.21764)
 
-[node name="item_143" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_143" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, 0.09721649, 0.005680304, -0.09738229, 0.99355257, 0.058052704, 0, -0.05832995, 0.99829733, -7.0137253, 8.470589, 71.13921)
 
-[node name="item_144" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_144" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, -0.11487139, 0.020093707, 0.11661558, 0.97832245, -0.1711316, 0, 0.17230721, 0.9850433, -45.088234, 21.960785, -235.46078)
 
-[node name="item_145" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_145" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.95951486, -0.2777202, -0.04693328, 0.28165802, 0.9461, 0.159886, 0, -0.16663213, 0.98601913, -105.20588, 9.411765, 141.27647)
 
-[node name="item_146" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_146" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, -0.05790465, -0.009049724, 0.058607556, 0.9863083, 0.15414682, 0, -0.15441224, 0.9880066, -195.38235, 28.078432, -37.072548)
 
-[node name="item_147" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_147" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99317706, -0.1165938, -0.0022661323, 0.11661582, 0.9929896, 0.019299874, 0, -0.019432459, 0.9998112, -159.31177, 28.392159, -173.33922)
 
-[node name="item_148" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_148" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9907474, -0.13369867, 0.02332984, 0.13571888, 0.97599983, -0.17030776, 0, 0.17189826, 0.98511475, -221.43333, 13.0196085, 59.115685)
 
-[node name="item_149" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_149" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9813849, -0.1920517, 0, 0.1920517, 0.9813849, 0, 0, 0, 1, -167.32745, 25.72549, 213.41765)
 
-[node name="item_150" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_150" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, -0.097088166, -0.0075637344, 0.09738235, 0.9922405, 0.07730132, 0, -0.077670485, 0.9969791, 89.17451, 8.941176, -107.2098)
 
-[node name="item_151" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_151" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9992349, 0.038923513, 0.0038056558, -0.03910911, 0.9944929, 0.09723423, 0, -0.09730867, 0.9952543, 255.5, 17.882353, -213.41765)
 
-[node name="item_152" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_152" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9879659, -0.15285417, 0.023642221, 0.15467174, 0.97635615, -0.15101472, 0, 0.15285417, 0.9882488, 163.31961, 16, 151.29608)
 
-[node name="item_153" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_153" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, 0.096724026, -0.011303049, -0.09738222, 0.9885203, -0.115517244, 0, 0.11606891, 0.9932412, -255.5, 11.921569, 113.221565)
 
-[node name="item_154" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_154" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99828106, -0.05859638, 0.0011447394, 0.05860756, 0.9980907, -0.01949871, 0, 0.019532284, 0.9998092, -67.13137, 20.705883, -135.26471)
 
-[node name="item_155" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_155" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9312158, 0.3642264, 0.013274927, -0.36446825, 0.93059796, 0.03391742, 0, -0.036422726, 0.9993365, -159.31177, 18.666666, 3.0058823)
 
-[node name="item_156" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_156" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982812, 0.058506925, -0.003428948, -0.05860732, 0.99657106, -0.0584066, 0, 0.058507163, 0.9982871, 155.30392, 24, -77.15098)
 
-[node name="item_157" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_157" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9907474, 0.13369867, -0.02332984, -0.13571888, 0.97599983, -0.17030776, 0, 0.17189826, 0.98511475, 177.34706, 15.843138, 15.029411)
 
-[node name="item_158" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_158" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9543137, 0.29751235, -0.02778088, -0.29880658, 0.95018023, -0.0887252, 0, 0.092972785, 0.99566865, -25.049019, 20.705883, 213.41765)
 
-[node name="item_159" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_159" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, -0.057060577, -0.013376711, 0.058607556, 0.9719309, 0.22784977, 0, -0.22824208, 0.97360444, 5.009804, 15.843138, -211.41373)
 
-[node name="item_160" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_160" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, 0.019532284, 0.0011464887, -0.019565903, 0.9980907, 0.058585044, 0, -0.05859626, 0.9982818, -89.17451, 16.156862, 37.072548)
 
-[node name="item_161" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_161" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99828106, 0.05842943, 0.004565877, -0.058607552, 0.99524707, 0.07777203, 0, -0.077905945, 0.9969607, -149.29216, 16, -57.111763)
 
-[node name="item_162" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_162" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98484164, -0.16825502, -0.042155746, 0.17345563, 0.95531374, 0.23935075, 0, -0.24303474, 0.9700176, 93.18235, 25.882355, 139.27255)
 
-[node name="item_163" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_163" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(1, 0, 0, 0, 0.98138475, 0.19205192, 0, -0.19205192, 0.98138475, -185.36275, 29.019608, -35.068626)
 
-[node name="item_164" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_164" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, -0.09692374, 0.00943865, 0.097382225, 0.9905613, -0.09646307, 0, 0.09692374, 0.9952919, -39.07647, 23.843138, 153.3)
 
-[node name="item_165" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_165" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.91849303, -0.39234382, 0.04936506, 0.39543718, 0.911308, -0.114661604, 0, 0.12483666, 0.99217737, 139.27255, 15.215687, -155.30392)
 
-[node name="item_166" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_166" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, 0.03904176, 0.0022903287, -0.039108884, 0.99752, 0.05851808, 0, -0.05856288, 0.9982838, 167.32745, 17.09804, 25.049019)
 
-[node name="item_167" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_167" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9992349, -0.039079007, -0.0015283454, 0.03910888, 0.9984717, 0.039049342, 0, -0.03907924, 0.9992361, -215.42157, 16.156862, 17.033333)
 
-[node name="item_168" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_168" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98138475, -0.1920164, 0.0036876986, 0.1920518, 0.98120385, -0.018844143, 0, 0.019201582, 0.99981564, 15.029411, 15.058824, 155.30392)
 
-[node name="item_169" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_169" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, 0.11626487, -0.009038872, -0.1166157, 0.99018925, -0.07698107, 0, 0.07750991, 0.99699163, -125.245094, 9.882353, -145.28432)
 
-[node name="item_170" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_170" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99524707, 0.09297267, 0.02897245, -0.097382344, 0.95018023, 0.2960983, 0, -0.29751235, 0.954718, -81.15882, 13.647059, 67.13137)
 
-[node name="item_171" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_171" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9249403, 0.37986368, -0.013751512, -0.3801125, 0.9243348, -0.03346201, 0, 0.036177486, 0.99934536, -129.25294, 14.588236, -159.31177)
 
-[node name="item_172" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_172" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99317706, -0.11403867, 0.024380956, 0.11661581, 0.9712284, -0.20764428, 0, 0.20907074, 0.9779005, -9.017647, 16.62745, 229.44902)
 
-[node name="item_173" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_173" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9992349, 0.038747802, -0.0053038597, -0.039109115, 0.9900034, -0.13551322, 0, 0.13561697, 0.99076134, -117.22941, 23.372551, 75.14706)
 
-[node name="item_174" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_174" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, 0.054944646, -0.0203944, -0.058607556, 0.9358896, -0.3473843, 0, 0.34798247, 0.937501, -201.39412, 23.372551, -143.2804)
 
-[node name="item_175" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_175" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, 0.16899493, 0.039084166, -0.17345564, 0.9595148, 0.22191101, 0, -0.22532658, 0.97428334, 97.19019, 34.039215, 17.033333)
 
-[node name="item_176" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_176" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9813848, -0.19148773, 0.014710226, 0.19205193, 0.97850174, -0.07516921, 0, 0.076595046, 0.9970623, -187.36667, 20.54902, 35.068626)
 
-[node name="item_177" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_177" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99695027, -0.078024305, -0.001522233, 0.07803915, 0.99676067, 0.019446531, 0, -0.019506019, 0.9998098, -231.45294, 16.62745, -5.009804)
 
-[node name="item_178" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_178" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9992349, -0.03772101, 0.010326618, 0.039109, 0.9637719, -0.2638451, 0, 0.2640471, 0.9645098, 67.13137, 13.647059, 99.194115)
 
-[node name="item_179" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_179" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, 0.038517173, 0.006778663, -0.039109115, 0.9841109, 0.17319433, 0, -0.17332694, 0.9848644, -247.48431, 26.039217, -109.21372)
 
-[node name="item_180" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_180" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9982811, -0.05856288, 0.0022881425, 0.05860756, 0.99752, -0.038974654, 0, 0.03904176, 0.99923766, -187.36667, 23.686275, -5.009804)
 
-[node name="item_181" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_181" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9543137, -0.2962856, 0.03873281, 0.2988066, 0.94626224, -0.123702936, 0, 0.12962502, 0.9915631, -83.16274, 18.19608, 9.017647)
 
-[node name="item_182" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_182" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, -0.16899472, 0.039084077, 0.1734554, 0.9595149, -0.2219108, 0, 0.22532637, 0.97428334, -71.13921, 14.901961, 169.33138)
 
-[node name="item_183" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_183" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.973517, 0.22857308, -0.0043545943, -0.22861455, 0.97334045, -0.018543314, 0, 0.019047756, 0.9998186, 29.056862, 5.490196, 115.22549)
 
-[node name="item_184" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_184" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9931771, 0.11523098, -0.017916987, -0.116615586, 0.9813849, -0.15259317, 0, 0.15364145, 0.98812675, -177.34706, 26.352942, 109.21372)
 
-[node name="item_185" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_185" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.92494035, -0.37789038, -0.041040197, 0.3801124, 0.9195334, 0.09986449, 0, -0.107968576, 0.99415433, -229.44902, 27.607843, -165.32353)
 
-[node name="item_186" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_186" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99695027, -0.07751014, -0.009073267, 0.07803939, 0.99018914, 0.115910634, 0, -0.116265215, 0.9932182, -197.38628, 20.392159, -253.49608)
 
-[node name="item_187" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_187" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.97351694, 0.22600494, -0.03444534, -0.22861476, 0.9624035, -0.1466796, 0, 0.1506698, 0.98858416, -129.25294, 23.686275, 83.16274)
 
-[node name="item_188" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_188" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9431946, -0.33224085, 0, 0.33224085, 0.9431946, 0, 0, 0, 1, 243.47647, 9.411765, 215.42157)
 
-[node name="item_189" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_189" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, -0.019506019, 0.0015265973, 0.019565664, 0.99676067, -0.07800937, 0, 0.078024305, 0.99695146, -217.42549, 21.960785, -43.084312)
 
-[node name="item_190" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_190" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, 0.019432224, -0.002281231, -0.019565668, 0.9929896, -0.11657125, 0, 0.11659357, 0.99317974, 11.021568, 18.19608, 233.45686)
 
-[node name="item_191" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_191" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.98796594, 0.14518575, 0.053333364, -0.15467174, 0.9273741, 0.34066692, 0, -0.34481648, 0.93867016, 239.46863, 20.705883, -93.18235)
 
-[node name="item_192" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_192" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, -0.019532047, -0.0011464772, 0.019565666, 0.9980907, 0.058585163, 0, -0.05859638, 0.9982818, 253.49608, 16.784313, -67.13137)
 
-[node name="item_193" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_193" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9848417, -0.1709035, -0.02964414, 0.17345542, 0.97035253, 0.16831289, 0, -0.1709035, 0.9852878, 191.37451, 18.509804, 241.47255)
 
-[node name="item_194" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_194" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.977606, 0.20858155, 0.027932968, -0.2104436, 0.96895593, 0.12976131, 0, -0.13273375, 0.9911518, -151.29608, 13.0196085, -69.13529)
 
-[node name="item_195" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_195" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9907474, 0.1350856, 0.0130954925, -0.13571887, 0.9861245, 0.095597066, 0, -0.09648985, 0.99533397, -215.42157, 19.764706, 147.28824)
 
-[node name="item_196" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_196" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9249403, 0.37986377, -0.013751558, -0.38011262, 0.92433476, -0.03346211, 0, 0.036177594, 0.99934536, 197.38628, 20.54902, -205.40196)
 
-[node name="item_197" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_197" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.9249402, 0.37856537, 0.034261346, -0.3801126, 0.92117536, 0.08336924, 0, -0.09013473, 0.9959296, 213.41765, 20.235294, 171.3353)
 
-[node name="item_198" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_198" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(1, 0, 0, 0, 0.99524707, -0.097382225, 0, 0.097382225, 0.99524707, -61.119606, 8.470589, -215.42157)
 
-[node name="item_199" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_199" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.999235, 0.038074795, -0.008934403, -0.039108995, 0.97281116, -0.22827402, 0, 0.2284488, 0.973556, -227.4451, 11.607843, 61.119606)
 
-[node name="item_200" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
+[node name="item_200" type="Node3D" parent="world/terrain/WorldItemSpawner" instance=ExtResource("10_76a8v")]
 transform = Transform3D(0.99980855, -0.0193847, 0.0026549317, 0.019565666, 0.99056125, -0.13566743, 0, 0.13569339, 0.9907509, 49.096077, 10.509805, 95.18627)
 
 [node name="lookout" parent="." instance=ExtResource("11_76a8v")]
