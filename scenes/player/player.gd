@@ -24,11 +24,11 @@ extends CharacterBody3D
 func _input(event: InputEvent) -> void:
 	head.handle_camera_input(event)
 
-#func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	#pools.handle_pools(delta)
 	##controller.handle_controller(delta)
 	#head.handle_controller_input(delta)
-	#head.move_sub_camera()
+	head.move_sub_camera()
 #
 #func use_slot_data(slot_data: ItemSlotData) -> void:
 	#slot_data.item_data.use(self)
