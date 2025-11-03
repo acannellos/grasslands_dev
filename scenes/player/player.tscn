@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cph1v4x1lu23a" path="res://scenes/player/states/player_controller_state.gd" id="3_p47bc"]
 [ext_resource type="Script" uid="uid://70oxoo2b33fc" path="res://scenes/player/components/player_controller.gd" id="4_0owmy"]
 [ext_resource type="Script" uid="uid://ccr40ys6dd5ls" path="res://scenes/player/states/player_grounded_state.gd" id="4_75vfm"]
-[ext_resource type="Script" uid="uid://ce278rc11myis" path="res://_dev/player_right_hand.gd" id="4_fm80t"]
+[ext_resource type="Script" uid="uid://ce278rc11myis" path="res://_dev/player/player_right_hand.gd" id="4_fm80t"]
 [ext_resource type="Script" uid="uid://5e4dlwxbu3mw" path="res://scenes/player/components/player_grounded.gd" id="7_0owmy"]
 [ext_resource type="Script" uid="uid://drs3jhc52sjen" path="res://_dev/combat/player_combat_component.gd" id="9_5gtgg"]
 [ext_resource type="Script" uid="uid://dn2w4fo0bxkpw" path="res://_dev/combat/ability_data.gd" id="10_je7p5"]

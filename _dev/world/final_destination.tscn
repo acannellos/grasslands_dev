@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://be7oe716afy1w"]
+
+[ext_resource type="PackedScene" uid="uid://g2ulvmaq7dfi" path="res://scenes/ui/ui_2d.tscn" id="1_mds02"]
+[ext_resource type="PackedScene" uid="uid://dlfg5inwjswqp" path="res://scenes/world/env/env.tscn" id="2_8aoaw"]
+[ext_resource type="PackedScene" uid="uid://c41quruc7ojx4" path="res://_dev/world/lookout.tscn" id="3_5ei2s"]
+[ext_resource type="PackedScene" uid="uid://yrxnx8s4qebt" path="res://scenes/player/player.tscn" id="4_1hpcu"]
+[ext_resource type="PackedScene" uid="uid://w33u5e86jw0v" path="res://_dev/world/spawner.tscn" id="5_8aoaw"]
+[ext_resource type="PackedScene" uid="uid://c5x3byc85x84e" path="res://_dev/enemy/enemy_ball.tscn" id="6_5ei2s"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_5ei2s"]
+vertices = PackedVector3Array(-28.874668, 0.26408958, 4.125246, -28.124668, 0.26408958, 8.125246, -26.124668, 0.26408958, 13.375246, -22.874668, 0.26408958, 18.625246, -18.124668, 0.26408958, 23.375246, -14.124668, 0.26408958, 26.125246, 4.375332, 0.26408958, 29.625246, 8.375332, 0.26408958, 28.875246, 13.625332, 0.26408958, 26.875246, 18.875332, 0.26408958, 23.625246, 23.625332, 0.26408958, 18.875246, 26.375332, 0.26408958, 14.875246, 29.875332, 0.26408958, -3.624754, 29.125332, 0.26408958, -7.624754, 26.625332, 0.26408958, -13.874754, -3.3746681, 0.26408958, -29.124754, -7.374668, 0.26408958, -28.374754, -13.624668, 0.26408958, -25.874754, -8.374668, 0.26408958, 28.625246, -3.6246681, 0.26408958, 29.625246, 28.875332, 0.26408958, 9.125246, 29.875332, 0.26408958, 4.375246, 15.125332, 0.26408958, -25.624754, 9.375332, 0.26408958, -28.124754, 4.625332, 0.26408958, -29.124754, -25.374668, 0.26408958, -14.374754, -27.874668, 0.26408958, -8.624754, -28.874668, 0.26408958, -3.874754, 23.875332, 0.26408958, -18.124754, -17.874668, 0.26408958, -23.124754, 19.125332, 0.26408958, -22.874754, -22.624668, 0.26408958, -18.374754)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 5), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 10), PackedInt32Array(10, 6, 11), PackedInt32Array(12, 14, 13), PackedInt32Array(15, 17, 16), PackedInt32Array(18, 5, 19), PackedInt32Array(19, 5, 6), PackedInt32Array(20, 11, 21), PackedInt32Array(21, 11, 12), PackedInt32Array(24, 23, 22), PackedInt32Array(27, 26, 25), PackedInt32Array(14, 12, 28), PackedInt32Array(28, 12, 22), PackedInt32Array(22, 12, 24), PackedInt32Array(24, 12, 15), PackedInt32Array(17, 15, 29), PackedInt32Array(29, 15, 25), PackedInt32Array(25, 15, 27), PackedInt32Array(27, 15, 0), PackedInt32Array(22, 30, 28), PackedInt32Array(25, 31, 29), PackedInt32Array(11, 6, 12), PackedInt32Array(12, 6, 5), PackedInt32Array(12, 5, 0), PackedInt32Array(12, 0, 15)]
+
+[node name="final_destination" type="Node3D"]
+
+[node name="ui_2d" parent="." instance=ExtResource("1_mds02")]
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="env" parent="world" instance=ExtResource("2_8aoaw")]
+
+[node name="player" parent="world" instance=ExtResource("4_1hpcu")]
+floor_snap_length = 0.2
+
+[node name="spawner" parent="world" node_paths=PackedStringArray("marker", "timer") instance=ExtResource("5_8aoaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -17.5)
+prefab = ExtResource("6_5ei2s")
+marker = NodePath("Marker3D")
+timer = NodePath("Timer")
+
+[node name="Marker3D" type="Marker3D" parent="world/spawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="Timer" type="Timer" parent="world/spawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="world"]
+navigation_mesh = SubResource("NavigationMesh_5ei2s")
+
+[node name="lookout" parent="world/NavigationRegion3D" instance=ExtResource("3_5ei2s")]

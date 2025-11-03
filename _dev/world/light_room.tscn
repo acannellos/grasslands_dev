@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://6v6sdyaudw5p" path="res://scenes/world/env/shaders/skybox.gdshader" id="3_r0xth"]
 [ext_resource type="PackedScene" uid="uid://yrxnx8s4qebt" path="res://scenes/player/player.tscn" id="4_lunqa"]
 [ext_resource type="Shader" uid="uid://7o5imgekfmld" path="res://scenes/world/terrain/terrain_clipmap.gdshader" id="5_0juc1"]
-[ext_resource type="PackedScene" uid="uid://c41quruc7ojx4" path="res://_dev/lookout.tscn" id="7_mwwkv"]
+[ext_resource type="PackedScene" uid="uid://c41quruc7ojx4" path="res://_dev/world/lookout.tscn" id="7_mwwkv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0juc1"]
 shader = ExtResource("3_r0xth")

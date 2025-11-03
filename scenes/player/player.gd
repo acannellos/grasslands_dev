@@ -14,12 +14,12 @@ extends CharacterBody3D
 #@export var grounded_state: PlayerGroundedState
 #@export var combat_state: PlayerCombatState
 #
-#func _ready() -> void:
+func _ready() -> void:
 	#Events.player_connected.emit(self)
 	#Events.player_used_slot_data.connect(use_slot_data)
 	#Events.player_equip_item_mod.connect(equip_item_mod)
 	#Events.player_unequip_item_mod.connect(unequip_item_mod)
-	##Global.player = self
+	Global.player = self
 #
 func _input(event: InputEvent) -> void:
 	head.handle_camera_input(event)

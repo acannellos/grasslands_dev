@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://2ssbpvrm47p4"
-path="res://.godot/imported/halfdome.glb-faa1d69fb7a50445f5f224c0412a461c.scn"
+path="res://.godot/imported/halfdome.glb-ab98eb40a83364117f1948d6a9842e6f.scn"
 
 [deps]
 
-source_file="res://_dev/halfdome.glb"
-dest_files=["res://.godot/imported/halfdome.glb-faa1d69fb7a50445f5f224c0412a461c.scn"]
+source_file="res://_dev/world/halfdome.glb"
+dest_files=["res://.godot/imported/halfdome.glb-ab98eb40a83364117f1948d6a9842e6f.scn"]
 
 [params]
 

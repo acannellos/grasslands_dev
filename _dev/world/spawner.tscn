@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://w33u5e86jw0v"]
+
+[ext_resource type="Script" uid="uid://qhh5c48wnw1a" path="res://_dev/world/spawner_dev.gd" id="1_3fnwl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b4gq8"]
+
+[node name="spawner" type="Node3D"]
+script = ExtResource("1_3fnwl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_b4gq8")

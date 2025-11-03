@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://52ec0h1n6cga" path="res://scenes/world/terrain/terrain_collision.gd" id="1_05tvt"]
 [ext_resource type="Shader" uid="uid://7o5imgekfmld" path="res://scenes/world/terrain/terrain_clipmap.gdshader" id="2_sj3sy"]
-[ext_resource type="Script" uid="uid://df4mjp2smg10y" path="res://_dev/world_item_spawner.gd" id="3_y7asf"]
-[ext_resource type="PackedScene" uid="uid://du1urhfmxaf3o" path="res://_dev/test_random_item.tscn" id="4_fohnu"]
+[ext_resource type="Script" uid="uid://df4mjp2smg10y" path="res://_dev/world/world_item_spawner.gd" id="3_y7asf"]
+[ext_resource type="PackedScene" uid="uid://du1urhfmxaf3o" path="res://_dev/world/test_random_item.tscn" id="4_fohnu"]
 [ext_resource type="PackedScene" uid="uid://yrxnx8s4qebt" path="res://scenes/player/player.tscn" id="5_ho8qd"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1kdie"]
