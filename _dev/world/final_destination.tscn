@@ -29,10 +29,36 @@ marker = NodePath("Marker3D")
 timer = NodePath("Timer")
 
 [node name="Marker3D" type="Marker3D" parent="world/spawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
 [node name="Timer" type="Timer" parent="world/spawner"]
 wait_time = 5.0
+autostart = true
+
+[node name="spawner2" parent="world" node_paths=PackedStringArray("marker", "timer") instance=ExtResource("5_8aoaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 4, -14)
+prefab = ExtResource("6_5ei2s")
+marker = NodePath("Marker3D")
+timer = NodePath("Timer")
+
+[node name="Marker3D" type="Marker3D" parent="world/spawner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+
+[node name="Timer" type="Timer" parent="world/spawner2"]
+wait_time = 4.0
+autostart = true
+
+[node name="spawner3" parent="world" node_paths=PackedStringArray("marker", "timer") instance=ExtResource("5_8aoaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 6, -13)
+prefab = ExtResource("6_5ei2s")
+marker = NodePath("Marker3D")
+timer = NodePath("Timer")
+
+[node name="Marker3D" type="Marker3D" parent="world/spawner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+
+[node name="Timer" type="Timer" parent="world/spawner3"]
+wait_time = 7.0
 autostart = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="world"]

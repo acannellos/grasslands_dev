@@ -5,89 +5,43 @@ extends CharacterBody3D
 @export var timer: Timer
 
 #@export var item_slot_data: ItemSlotData
-#
 #@export var pickup_scene: PackedScene
 
-
-
-#func _ready() -> void:
-	#set_physics_process(false)
-	#await get_tree().physics_frame
-	#health.init_with_stats(data.stats)
-	#health.full_replenish()
-#
-	#set_physics_process(true)
-#
-	#timer.connect("timeout", _on_timeout)
-	#Events.debug_enemy_died.connect(spawn_enemy)
-
-
+@export var is_dummy: bool = false
+#@export var health := 10
+#@export var damage_label: PackedScene
+@export var speed: float = 8.0
 
 @export var movement_speed: float = 4.0
 @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
 
 func _ready() -> void:
-	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+	timer.connect("timeout", _on_timeout)
 	health.init_with_stats(data.stats)
 	health.full_replenish()
-	await get_tree().physics_frame
 	set_movement_target(Global.player.global_position)
+	
+	#await get_tree().physics_frame
+	#set_physics_process(false)
+	#await get_tree().create_timer(3.0).timeout
+	#set_physics_process(true)
+	##navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+	#await get_tree().physics_frame
 
 func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
 
 func _physics_process(delta):
-	# Do not query when the map has never synchronized and is empty.
-	if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
-		return
-	if navigation_agent.is_navigation_finished():
-		return
+	
+	_move_ai_new()
 
-	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-	#print(next_path_position)
-	var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
-	if navigation_agent.avoidance_enabled:
-		navigation_agent.set_velocity(new_velocity)
-	else:
-		_on_velocity_computed(new_velocity)
+func _on_timeout() -> void:
+	set_movement_target(Global.player.global_position)
 
-func _on_velocity_computed(safe_velocity: Vector3):
-	velocity = safe_velocity
+func _move_ai_new():
+	var dir: Vector3 = global_position.direction_to(navigation_agent.get_next_path_position())
+	velocity = dir * 8.0
 	move_and_slide()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#func _on_timeout() -> void:
-	#update_target_location(Global.player.global_position)
-
-#@export var damage_label: PackedScene
-#@export var offset: Vector3 = Vector3.ZERO
-
-#
-#func handle_damage_label(_amt: int) -> void:
-	#if damage_label:
-		#var new_label = damage_label.instantiate() as Label3D
-		#new_label.text = str(_amt)
-		#get_tree().root.add_child(new_label)
-		##var rand: float = randf_range(-1.0, 1.0)
-		#var rand_vect: Vector3 =  Vector3(randf_range(-1.0, 1.0), randf_range(0.0, 1.0), randf_range(-1.0, 1.0))
-		#new_label.global_position = global_position + offset + rand_vect
 
 
 func damage(_amt: int) -> void:
@@ -106,7 +60,23 @@ func damage(_amt: int) -> void:
 		await get_tree().physics_frame
 		queue_free()
 		#destroy()
+
+
+#@export var damage_label: PackedScene
+#@export var offset: Vector3 = Vector3.ZERO
+
 #
+#func handle_damage_label(_amt: int) -> void:
+	#if damage_label:
+		#var new_label = damage_label.instantiate() as Label3D
+		#new_label.text = str(_amt)
+		#get_tree().root.add_child(new_label)
+		##var rand: float = randf_range(-1.0, 1.0)
+		#var rand_vect: Vector3 =  Vector3(randf_range(-1.0, 1.0), randf_range(0.0, 1.0), randf_range(-1.0, 1.0))
+		#new_label.global_position = global_position + offset + rand_vect
+
+
+
 #
 #func _on_dropped() -> void:
 	#var pickup = pickup_scene.instantiate()
@@ -116,14 +86,8 @@ func damage(_amt: int) -> void:
 	#pickup.scale *= 2
 
 
-#
-#extends CharacterBody3D
-#
-#
-@export var is_dummy: bool = false
-#@export var health := 10
-#@export var damage_label: PackedScene
-@export var speed: float = 8.0
+
+
 #@export var offset: Vector3 = Vector3.ZERO
 #
 #@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D

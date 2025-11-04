@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5x3byc85x84e"]
+[gd_scene load_steps=10 format=3 uid="uid://c5x3byc85x84e"]
 
 [ext_resource type="Script" uid="uid://b0rnne1128uef" path="res://_dev/enemy/enemy.gd" id="1_yjkw0"]
 [ext_resource type="Script" uid="uid://ccbfpriuxvxwe" path="res://scripts/stats/pool_stat.gd" id="2_2pdap"]
@@ -21,19 +21,6 @@ roughness = 0.0
 radial_segments = 16
 rings = 8
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_7pdme"]
-radius = 0.2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pdme"]
-diffuse_mode = 3
-specular_mode = 2
-albedo_color = Color(0.9999997, 0.6027344, 0.9272611, 1)
-roughness = 0.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_nkikt"]
-radius = 0.2
-height = 0.4
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n0e5c"]
 render_priority = 0
 shader = ExtResource("3_vskqf")
@@ -48,29 +35,18 @@ height = 3.0
 radial_segments = 8
 rings = 4
 
-[node name="enemy_ball" type="CharacterBody3D"]
+[node name="enemy_ball" type="CharacterBody3D" node_paths=PackedStringArray("timer")]
 script = ExtResource("1_yjkw0")
 health = SubResource("Resource_vskqf")
+timer = NodePath("Timer")
 speed = 1.0
 
 [node name="col_body" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_x002h")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 material_override = SubResource("StandardMaterial3D_x002h")
 mesh = SubResource("SphereMesh_x002h")
-
-[node name="enemy_head" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="col_head" type="CollisionShape3D" parent="enemy_head"]
-shape = SubResource("SphereShape3D_7pdme")
-
-[node name="mesh_head" type="MeshInstance3D" parent="enemy_head"]
-material_override = SubResource("StandardMaterial3D_7pdme")
-mesh = SubResource("SphereMesh_nkikt")
 
 [node name="shield" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -79,7 +55,6 @@ material_override = SubResource("ShaderMaterial_n0e5c")
 mesh = SubResource("SphereMesh_hvsdu")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
