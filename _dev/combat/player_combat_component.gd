@@ -3,6 +3,9 @@ extends CombatComponent
 
 @onready var player: Player = get_owner()
 
+@export var projectile: PackedScene
+@export var bullet_trail: PackedScene
+
 func _ready():
 	ability = abilities[0]
 
@@ -17,8 +20,8 @@ func player_use_ability():
 				match ability.combat_type:
 					"hitscan":
 						handle_hitscan()
-					#"projectile":
-						#handle_projectile()
+					"projectile":
+						handle_projectile()
 				
 				#_pools.aura.update(-1)
 				#_pools.output.update(1)
@@ -27,8 +30,8 @@ func player_use_ability():
 				match ability.combat_type:
 					"hitscan":
 						handle_hitscan()
-					#"projectile":
-						#handle_projectile()
+					"projectile":
+						handle_projectile()
 				#_pools.aura.update(-2)
 				#_pools.output.update(2)
 		"on_release":
@@ -38,12 +41,26 @@ func player_use_ability():
 				match ability.combat_type:
 					"hitscan":
 						handle_hitscan()
-					#"projectile":
-						#handle_projectile()
+					"projectile":
+						handle_projectile()
 				#is_charging = false
 
 
+func handle_projectile():
+	if not ability_cooldown.is_stopped(): return
+	ability_cooldown.start(ability.cooldown)
+	
+	#anim_player.play("pistol_shoot")
+	
+	#var attack = projectile.instantiate() as RayCast3D
+	var attack = projectile.instantiate()
+	#add_child(attack)
+	get_tree().root.add_child(attack)
+	attack.global_transform = marker.global_transform
+
 func handle_hitscan():
+	
+	
 	if not ability_cooldown.is_stopped(): return
 	ability_cooldown.start(ability.cooldown)
 	
@@ -79,11 +96,21 @@ func handle_hitscan():
 		var spawn_pos: Vector3 = marker.global_position + Vector3.ONE * spawn_rand
 		
 		#Draw.line(spawn_pos, end_pos, selected_color, debug_life)
-		Draw.line_as_vertical_ribbon(spawn_pos, end_pos, selected_color, 0.1, 2)
+		#Draw.line_as_vertical_ribbon(spawn_pos, end_pos, selected_color, 0.1, 2)
+		
+		var _trail = bullet_trail.instantiate()
+		#add_child(attack)
+		get_tree().root.add_child(_trail)
+		_trail.global_position = spawn_pos
+		
+		
 		
 		var kb: Vector3 = raycast.global_basis.z.normalized() * ability.knockback
 		kb = Vector3(kb.x, kb.y * 0.2, kb.z)
 		player.velocity += kb
 		Draw.line(spawn_pos, spawn_pos + kb, Color.GREEN_YELLOW, 2)
+		
+		await get_tree().physics_frame
+		_trail.global_position = end_pos
 		
 		#head.sway_z(ability.knockback * 100)

@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcvgpv2dm4k6a"]
+
+[ext_resource type="Script" uid="uid://dvtaf5ikr5oa7" path="res://_dev/vfx/dev_lifetime.gd" id="1_y2kuu"]
+[ext_resource type="Texture2D" uid="uid://d27u27eufctiy" path="res://_dev/vfx/gradient_trail_blue.tres" id="2_y2kuu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2kuu"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("2_y2kuu")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("2_y2kuu")
+use_particle_trails = true
+
+[sub_resource type="Curve" id="Curve_y2kuu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.34603176, 0.215244), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_uh6sn"]
+curve = SubResource("Curve_y2kuu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uh6sn"]
+direction = Vector3(0, 0, 1)
+spread = 0.0
+radial_velocity_min = -100.00002
+radial_velocity_max = -100.00002
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_uh6sn")
+
+[sub_resource type="Curve" id="Curve_syvtc"]
+_data = [Vector2(0, 0.6306818), 0.0, 0.0, 0, 0, Vector2(0.37463975, 0.7119318), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_ciobv"]
+shape = 0
+size = 0.5
+curve = SubResource("Curve_syvtc")
+
+[node name="bullet_trail" type="Node3D"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_y2kuu")
+lifetime = 1.0
+
+[node name="particle_trail_l" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_y2kuu")
+amount = 1
+lifetime = 6.0
+trail_enabled = true
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_uh6sn")
+draw_pass_1 = SubResource("RibbonTrailMesh_ciobv")
+
+[node name="particle_trail_l2" type="GPUParticles3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_y2kuu")
+amount = 1
+lifetime = 6.0
+trail_enabled = true
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_uh6sn")
+draw_pass_1 = SubResource("RibbonTrailMesh_ciobv")

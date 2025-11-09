@@ -21,8 +21,9 @@ func _ready() -> void:
 	#Events.player_dodge_used.connect(_on_player_dodge_used)
 
 func _physics_process(delta: float) -> void:
-	_update_rotation(delta)
-	_update_sway(delta)
+	#_update_rotation(delta)
+	#_update_sway(delta)
+	pass
 
 func _update_rotation(delta: float) -> void:
 	var target_rotation: Vector3 = original_rotation

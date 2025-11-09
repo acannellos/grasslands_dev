@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://yrxnx8s4qebt"]
+[gd_scene load_steps=20 format=3 uid="uid://yrxnx8s4qebt"]
 
 [ext_resource type="Script" uid="uid://bdbp8tsexxhog" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Shader" uid="uid://pvf08hg8b2bn" path="res://shaders/outline.gdshader" id="2_dovo2"]
@@ -11,7 +11,9 @@
 [ext_resource type="Script" uid="uid://5e4dlwxbu3mw" path="res://scenes/player/components/player_grounded.gd" id="7_0owmy"]
 [ext_resource type="Script" uid="uid://drs3jhc52sjen" path="res://_dev/combat/player_combat_component.gd" id="9_5gtgg"]
 [ext_resource type="Script" uid="uid://dn2w4fo0bxkpw" path="res://_dev/combat/ability_data.gd" id="10_je7p5"]
-[ext_resource type="Resource" uid="uid://cv663hdki48bi" path="res://_dev/combat/test_ability.tres" id="11_fm80t"]
+[ext_resource type="PackedScene" uid="uid://bshygocsnijih" path="res://_dev/vfx/vfx_slash.tscn" id="11_gx1jg"]
+[ext_resource type="PackedScene" uid="uid://bcvgpv2dm4k6a" path="res://_dev/vfx/dev_vfx_bullet_trail.tscn" id="12_ugbui"]
+[ext_resource type="Resource" uid="uid://cv663hdki48bi" path="res://_dev/combat/test_ability.tres" id="14_ugbui"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
 
@@ -132,10 +134,12 @@ metadata/_custom_type_script = "uid://cy7yyadvx711"
 
 [node name="PlayerCombat" type="Node" parent="components" node_paths=PackedStringArray("ability_cooldown", "raycast", "marker")]
 script = ExtResource("9_5gtgg")
+projectile = ExtResource("11_gx1jg")
+bullet_trail = ExtResource("12_ugbui")
 ability_cooldown = NodePath("ability_cooldown")
 raycast = NodePath("../../head/camera/RayCast3D")
 marker = NodePath("../../head/camera/SubViewportContainer/SubViewport/sub_camera/right_hand")
-abilities = Array[ExtResource("10_je7p5")]([ExtResource("11_fm80t")])
+abilities = Array[ExtResource("10_je7p5")]([ExtResource("14_ugbui")])
 metadata/_custom_type_script = "uid://drs3jhc52sjen"
 
 [node name="ability_cooldown" type="Timer" parent="components/PlayerCombat"]

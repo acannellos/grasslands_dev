@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=2 format=3 uid="uid://bbsu3aq2g7k40"]
+
+[ext_resource type="Script" uid="uid://dn2w4fo0bxkpw" path="res://_dev/combat/ability_data.gd" id="1_pap7o"]
+
+[resource]
+script = ExtResource("1_pap7o")
+input_type = "on_hold"
+combat_type = "projectile"
+metadata/_custom_type_script = "uid://dn2w4fo0bxkpw"
