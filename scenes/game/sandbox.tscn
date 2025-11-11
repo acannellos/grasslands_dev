@@ -232,7 +232,6 @@ transform = Transform3D(0.9982811, -0.058209043, 0.0068229795, 0.058607556, 0.99
 transform = Transform3D(0.9969503, 0.07449388, 0.023253756, -0.07803892, 0.9516622, 0.29706764, 0, -0.29797637, 0.95457333, 5.009804, 28.705883, -79.1549)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="world"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 66, 0)
 navigation_mesh = SubResource("NavigationMesh_mctbp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/NavigationRegion3D"]

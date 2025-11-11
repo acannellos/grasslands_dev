@@ -41,6 +41,7 @@ func _on_timeout() -> void:
 func _move_ai_new():
 	var dir: Vector3 = global_position.direction_to(navigation_agent.get_next_path_position())
 	velocity = dir * 8.0
+	
 	move_and_slide()
 
 

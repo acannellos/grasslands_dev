@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://7smemoeocoph"]
+[gd_scene load_steps=7 format=3 uid="uid://7smemoeocoph"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lia8f"]
-shading_mode = 0
-albedo_color = Color(1, 0.58000004, 0.58000004, 1)
+[ext_resource type="Shader" uid="uid://cfoe43n8153xw" path="res://_dev/dev_ui/progress_bar.gdshader" id="1_oj6yf"]
+[ext_resource type="Script" uid="uid://cy3vipf2egw2k" path="res://_dev/dev_ui/dev_progress_bar.gd" id="2_7eial"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7eial"]
+render_priority = 0
+shader = ExtResource("1_oj6yf")
+shader_parameter/bar_color = Color(1, 0.4, 0.4, 1)
+shader_parameter/background_color = Color(1, 1, 1, 1)
+shader_parameter/blank_color = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/value = 1.0
+shader_parameter/lag_value = 1.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_lia8f"]
-material = SubResource("StandardMaterial3D_lia8f")
 size = Vector2(5, 0.6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sd31"]
@@ -39,8 +46,10 @@ cull_mask = 1048574
 [node name="bar1" type="MeshInstance3D" parent="SubViewport"]
 transform = Transform3D(0.76604444, 0, 0.6427876, 0, 1, 0, -0.6427876, 0, 0.76604444, 0, 0, -2.557)
 layers = 2
+material_override = SubResource("ShaderMaterial_7eial")
 mesh = SubResource("QuadMesh_lia8f")
 skeleton = NodePath("../Camera3D")
+script = ExtResource("2_7eial")
 
 [node name="bar2" type="MeshInstance3D" parent="SubViewport"]
 transform = Transform3D(0.7660444, 0, 0.6427875, 0, 1, 0, -0.6427875, 0, 0.7660444, 0, -0.5, -2.557)
