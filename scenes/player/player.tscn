@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://yrxnx8s4qebt"]
+[gd_scene load_steps=20 format=3 uid="uid://yrxnx8s4qebt"]
 
 [ext_resource type="Script" uid="uid://bdbp8tsexxhog" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Shader" uid="uid://pvf08hg8b2bn" path="res://shaders/outline.gdshader" id="2_dovo2"]
@@ -7,10 +7,13 @@
 [ext_resource type="Script" uid="uid://cph1v4x1lu23a" path="res://scenes/player/states/player_controller_state.gd" id="3_p47bc"]
 [ext_resource type="Script" uid="uid://70oxoo2b33fc" path="res://scenes/player/components/player_controller.gd" id="4_0owmy"]
 [ext_resource type="Script" uid="uid://ccr40ys6dd5ls" path="res://scenes/player/states/player_grounded_state.gd" id="4_75vfm"]
+[ext_resource type="Script" uid="uid://ce278rc11myis" path="res://_dev/player/player_right_hand.gd" id="4_fm80t"]
 [ext_resource type="Script" uid="uid://5e4dlwxbu3mw" path="res://scenes/player/components/player_grounded.gd" id="7_0owmy"]
 [ext_resource type="Script" uid="uid://drs3jhc52sjen" path="res://_dev/combat/player_combat_component.gd" id="9_5gtgg"]
 [ext_resource type="Script" uid="uid://dn2w4fo0bxkpw" path="res://_dev/combat/ability_data.gd" id="10_je7p5"]
-[ext_resource type="Resource" uid="uid://cv663hdki48bi" path="res://_dev/combat/test_ability.tres" id="11_fm80t"]
+[ext_resource type="PackedScene" uid="uid://bshygocsnijih" path="res://_dev/vfx/vfx_slash.tscn" id="11_gx1jg"]
+[ext_resource type="PackedScene" uid="uid://bcvgpv2dm4k6a" path="res://_dev/vfx/dev_vfx_bullet_trail.tscn" id="12_ugbui"]
+[ext_resource type="Resource" uid="uid://cv663hdki48bi" path="res://_dev/combat/test_ability.tres" id="14_ugbui"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
 
@@ -29,6 +32,9 @@ material = SubResource("ShaderMaterial_gmlin")
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="BoxMesh" id="BoxMesh_je7p5"]
+size = Vector3(0.2, 0.1, 0.4)
+
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("head")]
 script = ExtResource("1_8afob")
 head = NodePath("head")
@@ -41,12 +47,14 @@ shape = SubResource("CapsuleShape3D_x7p2l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_8afob")
 
-[node name="head" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+[node name="head" type="Node3D" parent="." node_paths=PackedStringArray("camera", "sub_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 script = ExtResource("2_qek5x")
 camera = NodePath("camera")
+sub_camera = NodePath("camera/SubViewportContainer/SubViewport/sub_camera")
 
 [node name="camera" type="Camera3D" parent="head"]
+cull_mask = 1048573
 
 [node name="post" type="MeshInstance3D" parent="head/camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
@@ -57,8 +65,32 @@ mesh = SubResource("QuadMesh_8afob")
 [node name="RayCast3D" type="RayCast3D" parent="head/camera"]
 target_position = Vector3(0, 0, -100)
 
-[node name="Marker3D" type="Marker3D" parent="head/camera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="head/camera"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="head/camera/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="sub_camera" type="Camera3D" parent="head/camera/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+cull_mask = 2
+
+[node name="right_hand" type="Marker3D" parent="head/camera/SubViewportContainer/SubViewport/sub_camera" node_paths=PackedStringArray("input")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.4, -1)
+script = ExtResource("4_fm80t")
+input = NodePath("../../../../../../components/PlayerInput")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head/camera/SubViewportContainer/SubViewport/sub_camera/right_hand"]
+layers = 2
+extra_cull_margin = 16384.0
+mesh = SubResource("BoxMesh_je7p5")
 
 [node name="feet" type="Node3D" parent="."]
 
@@ -92,6 +124,7 @@ one_shot = true
 
 [node name="jump_buffer_timer" type="Timer" parent="states/PlayerGroundedState/PlayerGrounded"]
 wait_time = 0.2
+one_shot = true
 
 [node name="components" type="Node" parent="."]
 
@@ -101,11 +134,13 @@ metadata/_custom_type_script = "uid://cy7yyadvx711"
 
 [node name="PlayerCombat" type="Node" parent="components" node_paths=PackedStringArray("ability_cooldown", "raycast", "marker")]
 script = ExtResource("9_5gtgg")
-ability_cooldown = NodePath("Timer")
+projectile = ExtResource("11_gx1jg")
+bullet_trail = ExtResource("12_ugbui")
+ability_cooldown = NodePath("ability_cooldown")
 raycast = NodePath("../../head/camera/RayCast3D")
-marker = NodePath("../../head/camera/Marker3D")
-abilities = Array[ExtResource("10_je7p5")]([ExtResource("11_fm80t")])
+marker = NodePath("../../head/camera/SubViewportContainer/SubViewport/sub_camera/right_hand")
+abilities = Array[ExtResource("10_je7p5")]([ExtResource("14_ugbui")])
 metadata/_custom_type_script = "uid://drs3jhc52sjen"
 
-[node name="Timer" type="Timer" parent="components/PlayerCombat"]
+[node name="ability_cooldown" type="Timer" parent="components/PlayerCombat"]
 one_shot = true

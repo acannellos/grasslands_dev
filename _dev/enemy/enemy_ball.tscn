@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5x3byc85x84e"]
+
+[ext_resource type="Script" uid="uid://b0rnne1128uef" path="res://_dev/enemy/enemy.gd" id="1_yjkw0"]
+[ext_resource type="Script" uid="uid://ccbfpriuxvxwe" path="res://scripts/stats/pool_stat.gd" id="2_2pdap"]
+[ext_resource type="Shader" uid="uid://4gb1cilch4mu" path="res://shaders/fresnel.gdshader" id="3_vskqf"]
+
+[sub_resource type="Resource" id="Resource_vskqf"]
+script = ExtResource("2_2pdap")
+max_type = 1
+regen_type = 4
+metadata/_custom_type_script = "uid://ccbfpriuxvxwe"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x002h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x002h"]
+diffuse_mode = 3
+specular_mode = 2
+roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_x002h"]
+radial_segments = 16
+rings = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n0e5c"]
+render_priority = 0
+shader = ExtResource("3_vskqf")
+shader_parameter/base_color = Color(0, 0, 0, 1)
+shader_parameter/fresnel_color = Color(0.36, 1, 0.96800005, 1)
+shader_parameter/fresnel_intensity = 1.0
+shader_parameter/fresnel_thickness = 4.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_hvsdu"]
+radius = 1.5
+height = 3.0
+radial_segments = 8
+rings = 4
+
+[node name="enemy_ball" type="CharacterBody3D" node_paths=PackedStringArray("timer")]
+script = ExtResource("1_yjkw0")
+health = SubResource("Resource_vskqf")
+timer = NodePath("Timer")
+speed = 1.0
+
+[node name="col_body" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_x002h")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_x002h")
+mesh = SubResource("SphereMesh_x002h")
+
+[node name="shield" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("ShaderMaterial_n0e5c")
+mesh = SubResource("SphereMesh_hvsdu")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

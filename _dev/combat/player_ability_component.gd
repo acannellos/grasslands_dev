@@ -137,7 +137,7 @@ func handle_projectile():
 	if not ability_cooldown.is_stopped(): return
 	ability_cooldown.start(ability.cooldown)
 	
-	anim_player.play("pistol_shoot")
+	#anim_player.play("pistol_shoot")
 	
 	#var attack = projectile.instantiate() as RayCast3D
 	var attack = projectile.instantiate()

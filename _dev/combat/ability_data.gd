@@ -14,8 +14,8 @@ extends Resource
 @export_range(0.1, 5) var cooldown: float = 0.1  # Firerate
 @export_range(1, 200) var max_distance: int = 100  # Fire distance
 #@export_range(0, 100) var damage: float = 5  # Damage per hit
-#@export_range(0, 100) var damage_min: float = 5  # Damage per hit
-#@export_range(0, 100) var damage_max: float = 5  # Damage per hit
+@export_range(0, 100) var damage_min: float = 5  # Damage per hit
+@export_range(0, 100) var damage_max: float = 5  # Damage per hit
 #
 @export_range(0, 10) var target_spread: float = 0  # Spread of each shot
 @export_range(0, 5) var spawn_spread: float = 0  # Spread of each shot

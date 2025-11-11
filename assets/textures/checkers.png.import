@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt7ttoe4xvqph"
-path.s3tc="res://.godot/imported/checkerbox_16_albedo.png-545b99c9c9ae703575b1efdf23acb13c.s3tc.ctex"
+uid="uid://c3rcafw1cy6kd"
+path="res://.godot/imported/checkers.png-d6a7693958767daf8c55fc1c0e399de4.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://_dev/checkerbox_16_albedo.png"
-dest_files=["res://.godot/imported/checkerbox_16_albedo.png-545b99c9c9ae703575b1efdf23acb13c.s3tc.ctex"]
+source_file="res://assets/textures/checkers.png"
+dest_files=["res://.godot/imported/checkers.png-d6a7693958767daf8c55fc1c0e399de4.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

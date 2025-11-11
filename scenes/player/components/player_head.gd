@@ -2,7 +2,7 @@ class_name PlayerHead
 extends PlayerComponent3D
 
 @export var camera: Camera3D
-#@export var sub_camera: Camera3D
+@export var sub_camera: Camera3D
 #@export var marker: Marker3D
 
 var max_deg: float = 90
@@ -11,8 +11,8 @@ var sensitivity: float = 0.001
 #var prev_t : Transform3D
 #var current_t : Transform3D
 
-#func move_sub_camera() -> void:
-	#sub_camera.global_transform = camera.global_transform
+func move_sub_camera() -> void:
+	sub_camera.global_transform = camera.global_transform
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
