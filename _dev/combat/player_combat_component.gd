@@ -96,13 +96,13 @@ func handle_hitscan():
 		var spawn_pos: Vector3 = marker.global_position + Vector3.ONE * spawn_rand
 		
 		#Draw.line(spawn_pos, end_pos, selected_color, debug_life)
-		#Draw.line_as_vertical_ribbon(spawn_pos, end_pos, selected_color, 0.1, 2)
+		Draw.line_as_vertical_ribbon(spawn_pos, end_pos, selected_color, 0.1, 2)
 		
-		var _trail = bullet_trail.instantiate()
-		#add_child(attack)
-		get_tree().root.add_child(_trail)
-		_trail.global_position = spawn_pos
 		
+		# TODO move trail to better spot
+		#var _trail = bullet_trail.instantiate()
+		#get_tree().root.add_child(_trail)
+		#_trail.global_position = spawn_pos
 		
 		
 		var kb: Vector3 = raycast.global_basis.z.normalized() * ability.knockback
@@ -110,7 +110,7 @@ func handle_hitscan():
 		player.velocity += kb
 		Draw.line(spawn_pos, spawn_pos + kb, Color.GREEN_YELLOW, 2)
 		
-		await get_tree().physics_frame
-		_trail.global_position = end_pos
+		#await get_tree().physics_frame
+		#_trail.global_position = end_pos
 		
 		#head.sway_z(ability.knockback * 100)

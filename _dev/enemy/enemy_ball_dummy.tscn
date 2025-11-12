@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://dcvx6fbs433rj"]
+
+[ext_resource type="Script" uid="uid://6he45265e2bx" path="res://_dev/enemy/enemy_dummy.gd" id="1_m36vg"]
+[ext_resource type="Shader" uid="uid://4gb1cilch4mu" path="res://shaders/fresnel.gdshader" id="3_lw1k8"]
+[ext_resource type="Script" uid="uid://cp7tsxcqbd7we" path="res://_dev/dev_ui/dev_progress_bar_dummy.gd" id="4_l7bpi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x002h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x002h"]
+diffuse_mode = 3
+specular_mode = 2
+roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_x002h"]
+radial_segments = 16
+rings = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n0e5c"]
+render_priority = 0
+shader = ExtResource("3_lw1k8")
+shader_parameter/base_color = Color(0, 0, 0, 1)
+shader_parameter/fresnel_color = Color(0.36, 1, 0.96800005, 1)
+shader_parameter/fresnel_intensity = 1.0
+shader_parameter/fresnel_thickness = 4.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_hvsdu"]
+radius = 1.5
+height = 3.0
+radial_segments = 8
+rings = 4
+
+[sub_resource type="Shader" id="Shader_2fgre"]
+code = "shader_type spatial;
+render_mode unshaded;
+
+uniform vec4 bar_color : source_color = vec4(1.0, 0.4, 0.4, 1.0);
+uniform vec4 background_color : source_color = vec4(1);
+uniform vec4 blank_color : source_color = vec4(0.1, 0.1, 0.1, 1.0);
+
+uniform float value : hint_range(0.0, 1.0) = 1.0;
+uniform float lag_value : hint_range(0.0, 1.0) = 1.0;
+
+void vertex() {
+	// Billboard Mode: Enabled
+	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
+			MAIN_CAM_INV_VIEW_MATRIX[0],
+			MAIN_CAM_INV_VIEW_MATRIX[1],
+			MAIN_CAM_INV_VIEW_MATRIX[2],
+			MODEL_MATRIX[3]);
+	MODELVIEW_NORMAL_MATRIX = mat3(MODELVIEW_MATRIX);
+}
+
+void fragment() {
+    float uvx = clamp(UV.x, 0.0, 1.0);
+
+    float min_v = min(value, lag_value);
+    float max_v = max(value, lag_value);
+
+    vec4 color;
+
+    if (uvx <= min_v) {
+        color = bar_color;
+    } 
+    else if (uvx <= max_v) {
+        color = background_color;
+    } 
+    else {
+        color = blank_color;
+    }
+
+    ALBEDO = color.rgb;
+    //ALPHA = color.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m36vg"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_2fgre")
+shader_parameter/bar_color = Color(1, 0.4, 0.4, 1)
+shader_parameter/background_color = Color(1, 1, 1, 1)
+shader_parameter/blank_color = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/value = 1.0
+shader_parameter/lag_value = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_0hgjy"]
+size = Vector2(2, 0.3)
+
+[node name="enemy_ball_dummy" type="CharacterBody3D" node_paths=PackedStringArray("bar")]
+script = ExtResource("1_m36vg")
+bar = NodePath("test_enemy_progress_bar")
+
+[node name="col_body" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_x002h")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_x002h")
+mesh = SubResource("SphereMesh_x002h")
+
+[node name="shield" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("ShaderMaterial_n0e5c")
+mesh = SubResource("SphereMesh_hvsdu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="test_enemy_progress_bar" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("ShaderMaterial_m36vg")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_0hgjy")
+script = ExtResource("4_l7bpi")

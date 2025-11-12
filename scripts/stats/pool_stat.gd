@@ -2,6 +2,10 @@ class_name PoolStat
 #extends Node
 extends Resource
 
+func _init(_max_type: Enums.IntStatType = Enums.IntStatType.MAX_HEALTH, _regen_type: Enums.IntStatType = Enums.IntStatType.HEALTH_REGEN):
+	max_type = _max_type
+	regen_type = _regen_type
+
 @export var max_type: Enums.IntStatType:
 	set(_stat_key):
 		max_type = _stat_key

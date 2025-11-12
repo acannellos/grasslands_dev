@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkr0g3rexptq6"]
+[gd_scene load_steps=10 format=3 uid="uid://dkr0g3rexptq6"]
 
 [ext_resource type="PackedScene" uid="uid://g2ulvmaq7dfi" path="res://scenes/ui/ui_2d.tscn" id="1_a83pb"]
 [ext_resource type="PackedScene" uid="uid://dlfg5inwjswqp" path="res://scenes/world/env/env.tscn" id="2_u31gi"]
 [ext_resource type="PackedScene" uid="uid://yrxnx8s4qebt" path="res://scenes/player/player.tscn" id="3_stjk2"]
+[ext_resource type="PackedScene" uid="uid://dcvx6fbs433rj" path="res://_dev/enemy/enemy_ball_dummy.tscn" id="4_u31gi"]
 [ext_resource type="Texture2D" uid="uid://c3rcafw1cy6kd" path="res://assets/textures/checkers.png" id="6_stjk2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_u8l3x"]
@@ -31,6 +32,15 @@ data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100,
 
 [node name="player" parent="world" instance=ExtResource("3_stjk2")]
 floor_snap_length = 0.2
+
+[node name="enemy_ball_dummy" parent="world" instance=ExtResource("4_u31gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -25)
+
+[node name="enemy_ball_dummy2" parent="world" instance=ExtResource("4_u31gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, -25)
+
+[node name="enemy_ball_dummy3" parent="world" instance=ExtResource("4_u31gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -25)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="world"]
 navigation_mesh = SubResource("NavigationMesh_u8l3x")
