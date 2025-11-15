@@ -109,6 +109,8 @@ func handle_hitscan():
 		kb = Vector3(kb.x, kb.y * 0.2, kb.z)
 		player.velocity += kb
 		Draw.line(spawn_pos, spawn_pos + kb, Color.GREEN_YELLOW, 2)
+
+		
 		
 		#await get_tree().physics_frame
 		#_trail.global_position = end_pos

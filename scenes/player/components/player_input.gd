@@ -10,7 +10,7 @@ var input_dir: Vector2
 #var has_dodge: bool = false
 var has_jump: bool = false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("debug_no_clip"):
 		is_debug_no_clip = !is_debug_no_clip

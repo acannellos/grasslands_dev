@@ -7,8 +7,8 @@
 [ext_resource type="Script" uid="uid://cph1v4x1lu23a" path="res://scenes/player/states/player_controller_state.gd" id="3_p47bc"]
 [ext_resource type="Script" uid="uid://70oxoo2b33fc" path="res://scenes/player/components/player_controller.gd" id="4_0owmy"]
 [ext_resource type="Script" uid="uid://ccr40ys6dd5ls" path="res://scenes/player/states/player_grounded_state.gd" id="4_75vfm"]
-[ext_resource type="Script" uid="uid://ce278rc11myis" path="res://_dev/player/player_right_hand.gd" id="4_fm80t"]
 [ext_resource type="Script" uid="uid://5e4dlwxbu3mw" path="res://scenes/player/components/player_grounded.gd" id="7_0owmy"]
+[ext_resource type="Script" uid="uid://d4hct20o52k3r" path="res://scenes/player/states/player_combat_state.gd" id="8_ugbui"]
 [ext_resource type="Script" uid="uid://drs3jhc52sjen" path="res://_dev/combat/player_combat_component.gd" id="9_5gtgg"]
 [ext_resource type="Script" uid="uid://dn2w4fo0bxkpw" path="res://_dev/combat/ability_data.gd" id="10_je7p5"]
 [ext_resource type="PackedScene" uid="uid://bshygocsnijih" path="res://_dev/vfx/vfx_slash.tscn" id="11_gx1jg"]
@@ -82,10 +82,8 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 cull_mask = 2
 
-[node name="right_hand" type="Marker3D" parent="head/camera/SubViewportContainer/SubViewport/sub_camera" node_paths=PackedStringArray("input")]
+[node name="right_hand" type="Marker3D" parent="head/camera/SubViewportContainer/SubViewport/sub_camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.4, -1)
-script = ExtResource("4_fm80t")
-input = NodePath("../../../../../../components/PlayerInput")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="head/camera/SubViewportContainer/SubViewport/sub_camera/right_hand"]
 layers = 2
@@ -126,21 +124,25 @@ one_shot = true
 wait_time = 0.2
 one_shot = true
 
+[node name="PlayerCombatState" type="Node" parent="states"]
+script = ExtResource("8_ugbui")
+metadata/_custom_type_script = "uid://d4hct20o52k3r"
+
+[node name="PlayerCombat" type="Node" parent="states/PlayerCombatState" node_paths=PackedStringArray("ability_cooldown", "raycast", "marker")]
+script = ExtResource("9_5gtgg")
+projectile = ExtResource("11_gx1jg")
+bullet_trail = ExtResource("12_ugbui")
+ability_cooldown = NodePath("ability_cooldown")
+raycast = NodePath("../../../head/camera/RayCast3D")
+marker = NodePath("../../../head/camera/SubViewportContainer/SubViewport/sub_camera/right_hand")
+abilities = Array[ExtResource("10_je7p5")]([ExtResource("14_ugbui")])
+metadata/_custom_type_script = "uid://drs3jhc52sjen"
+
+[node name="ability_cooldown" type="Timer" parent="states/PlayerCombatState/PlayerCombat"]
+one_shot = true
+
 [node name="components" type="Node" parent="."]
 
 [node name="PlayerInput" type="Node" parent="components"]
 script = ExtResource("3_gmlin")
 metadata/_custom_type_script = "uid://cy7yyadvx711"
-
-[node name="PlayerCombat" type="Node" parent="components" node_paths=PackedStringArray("ability_cooldown", "raycast", "marker")]
-script = ExtResource("9_5gtgg")
-projectile = ExtResource("11_gx1jg")
-bullet_trail = ExtResource("12_ugbui")
-ability_cooldown = NodePath("ability_cooldown")
-raycast = NodePath("../../head/camera/RayCast3D")
-marker = NodePath("../../head/camera/SubViewportContainer/SubViewport/sub_camera/right_hand")
-abilities = Array[ExtResource("10_je7p5")]([ExtResource("14_ugbui")])
-metadata/_custom_type_script = "uid://drs3jhc52sjen"
-
-[node name="ability_cooldown" type="Timer" parent="components/PlayerCombat"]
-one_shot = true
