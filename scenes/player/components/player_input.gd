@@ -41,3 +41,12 @@ func _physics_process(_delta: float) -> void:
 	#
 	#if Input.is_action_just_pressed("interact"):
 		#pass
+
+	#if Input.is_action_just_pressed("primary"):
+		#print("on_press")
+#
+	#if Input.is_action_pressed("primary"):
+		#print("on_hold")
+	#
+	#if Input.is_action_just_released("primary"):
+		#print("on_release")

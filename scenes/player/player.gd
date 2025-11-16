@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody3D
 #
 #@export var data: PlayerData = PlayerData.new()
-#@export var abilities: Array[Ability] = []
+@export var abilities: Array[Ability] = []
 #
 #@export_category("components")
 #@export var input: PlayerInput

@@ -3,48 +3,21 @@ extends CombatComponent
 
 @onready var player: Player = get_owner()
 
+
+
+@export var ability_cooldown: Timer
+@export var raycast: RayCast3D
+@export var marker: Marker3D
+
+var ability: Ability
+@export var abilities: Array[Ability] = []
+
+
 @export var projectile: PackedScene
 @export var bullet_trail: PackedScene
 
 func _ready():
 	ability = abilities[0]
-
-func _physics_process(delta: float) -> void:
-	player_use_ability()
-
-
-func player_use_ability():
-	match ability.input_type:
-		"on_hold":
-			if Input.is_action_pressed("primary"):
-				match ability.combat_type:
-					"hitscan":
-						handle_hitscan()
-					"projectile":
-						handle_projectile()
-				
-				#_pools.aura.update(-1)
-				#_pools.output.update(1)
-		"on_press":
-			if Input.is_action_just_pressed("primary"):
-				match ability.combat_type:
-					"hitscan":
-						handle_hitscan()
-					"projectile":
-						handle_projectile()
-				#_pools.aura.update(-2)
-				#_pools.output.update(2)
-		"on_release":
-			#if Input.is_action_pressed("primary"):
-				#is_charging = true
-			if Input.is_action_just_released("primary"):
-				match ability.combat_type:
-					"hitscan":
-						handle_hitscan()
-					"projectile":
-						handle_projectile()
-				#is_charging = false
-
 
 func handle_projectile():
 	if not ability_cooldown.is_stopped(): return

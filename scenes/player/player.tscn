@@ -37,6 +37,7 @@ size = Vector3(0.2, 0.1, 0.4)
 
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("head")]
 script = ExtResource("1_8afob")
+abilities = Array[ExtResource("10_je7p5")]([ExtResource("14_ugbui")])
 head = NodePath("head")
 
 [node name="col_body" type="CollisionShape3D" parent="."]
@@ -124,18 +125,19 @@ one_shot = true
 wait_time = 0.2
 one_shot = true
 
-[node name="PlayerCombatState" type="Node" parent="states"]
+[node name="PlayerCombatState" type="Node" parent="states" node_paths=PackedStringArray("combat")]
 script = ExtResource("8_ugbui")
+combat = NodePath("PlayerCombat")
 metadata/_custom_type_script = "uid://d4hct20o52k3r"
 
 [node name="PlayerCombat" type="Node" parent="states/PlayerCombatState" node_paths=PackedStringArray("ability_cooldown", "raycast", "marker")]
 script = ExtResource("9_5gtgg")
-projectile = ExtResource("11_gx1jg")
-bullet_trail = ExtResource("12_ugbui")
 ability_cooldown = NodePath("ability_cooldown")
 raycast = NodePath("../../../head/camera/RayCast3D")
 marker = NodePath("../../../head/camera/SubViewportContainer/SubViewport/sub_camera/right_hand")
 abilities = Array[ExtResource("10_je7p5")]([ExtResource("14_ugbui")])
+projectile = ExtResource("11_gx1jg")
+bullet_trail = ExtResource("12_ugbui")
 metadata/_custom_type_script = "uid://drs3jhc52sjen"
 
 [node name="ability_cooldown" type="Timer" parent="states/PlayerCombatState/PlayerCombat"]

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_5kktx")
-input_type = "on_hold"
+input_type = "on_release"
 damage_min = 1.0
 damage_max = 1.0
 spawn_spread = 0.2

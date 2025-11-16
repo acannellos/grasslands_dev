@@ -18,11 +18,11 @@ func _ready() -> void:
 	health.init_with_stats(data.stats)
 	health.full_replenish()
 	
-	print("Enemy ready:")
-	print("  EnemyData:", data)
-	print("  Stats:", data.stats)
-	print("  Max stat:", data.stats.get_stat("MAX_HEALTH"))
-	print("  PoolStat.max_stat:", health.max_stat)
+	#print("Enemy ready:")
+	#print("  EnemyData:", data)
+	#print("  Stats:", data.stats)
+	#print("  Max stat:", data.stats.get_stat("MAX_HEALTH"))
+	#print("  PoolStat.max_stat:", health.max_stat)
 
 func damage(_amt: int) -> void:
 	#print(health.value)
@@ -31,9 +31,9 @@ func damage(_amt: int) -> void:
 	var f: float = float(health.value) / float(health.max_stat.value)
 	
 	
-	print(health.value)
-	print(health.max_stat.value)
-	print(f)
+	#print(health.value)
+	#print(health.max_stat.value)
+	#print(f)
 	
 	bar.set_progress(f)
 	#print(health.value / health.max_stat.value)
