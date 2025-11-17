@@ -1,44 +1,97 @@
 class_name PlayerCombat
 extends CombatComponent
 
-@onready var player: Player = get_owner()
-
-
-
 @export var ability_cooldown: Timer
 @export var raycast: RayCast3D
 @export var marker: Marker3D
 
-var ability: Ability
-@export var abilities: Array[Ability] = []
-
-
 @export var projectile: PackedScene
 @export var bullet_trail: PackedScene
 
-func _ready():
-	ability = abilities[0]
+@onready var player: Player = get_owner()
+
+func use_ability(ability: Ability) -> void:
+	match ability.combat_type:
+		"melee":
+			handle_melee(ability)
+		"hitscan":
+			handle_hitscan(ability)
+		"projectile":
+			handle_projectile()
+#
+#func handle_melee() -> void:
+	#Draw.square(marker.global_position, marker.global_basis, Vector3(1, 1, -3), Color.WHITE_SMOKE, 2)
+
+
+func handle_melee(ability: Ability) -> void:
+	# --- Query Setup ---
+	var space_state = player.get_world_3d().direct_space_state
+
+	# Define melee hitbox dimensions (matches your Draw.square)
+	var box_extents := Vector3(1, 1, 3) * 0.5  # half extents
+	var shape := BoxShape3D.new()
+	shape.size = box_extents * 2
+
+	# Use the marker’s transform to center the shape in front of player
+	var xform := marker.global_transform
+	# Move the box forward by half its length so it sits *in front*
+	xform.origin += marker.global_basis.z * -box_extents.z
+
+	var query := PhysicsShapeQueryParameters3D.new()
+	query.shape = shape
+	query.transform = xform
+	query.collide_with_areas = true
+	query.collide_with_bodies = true
+
+	# --- Query Execution ---
+	var hits = space_state.intersect_shape(query, 16)
+
+	var debug_color := Color.WHITE_SMOKE
+
+	if hits.size() > 0:
+		var hit_something_damagable := false
+		var hit_something_undamagable := false
+
+		for hit in hits:
+			var collider = hit["collider"]
+
+			if collider == player:
+				continue
+
+			if collider and collider.has_method("damage"):
+				# TODO: Replace with your ability damage values
+				var dmg := randi_range(ability.damage_min, ability.damage_max)
+				collider.damage(dmg)
+				hit_something_damagable = true
+			else:
+				hit_something_undamagable = true
+
+		# Set color based on best match
+		if hit_something_damagable:
+			debug_color = Color.RED
+		elif hit_something_undamagable:
+			debug_color = Color.ORANGE
+	else:
+		debug_color = Color.MAGENTA
+
+	# --- Draw Debug Square ---
+	Draw.square(
+		marker.global_position,
+		marker.global_basis,
+		Vector3(0.5, 0.5, -3),
+		debug_color,
+		2
+	)
+
 
 func handle_projectile():
-	if not ability_cooldown.is_stopped(): return
-	ability_cooldown.start(ability.cooldown)
-	
-	#anim_player.play("pistol_shoot")
-	
-	#var attack = projectile.instantiate() as RayCast3D
 	var attack = projectile.instantiate()
-	#add_child(attack)
 	get_tree().root.add_child(attack)
 	attack.global_transform = marker.global_transform
 
-func handle_hitscan():
-	
-	
-	if not ability_cooldown.is_stopped(): return
-	ability_cooldown.start(ability.cooldown)
+func handle_hitscan(ability: Ability):
 	
 	raycast.target_position.z = -ability.max_distance
-	
 	
 	for n in ability.shot_count:
 		
@@ -83,8 +136,6 @@ func handle_hitscan():
 		player.velocity += kb
 		Draw.line(spawn_pos, spawn_pos + kb, Color.GREEN_YELLOW, 2)
 
-		
-		
 		#await get_tree().physics_frame
 		#_trail.global_position = end_pos
 		

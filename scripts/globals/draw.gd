@@ -39,21 +39,30 @@ static func point(pos: Vector3, radius = 0.05, color = Color.WHITE_SMOKE, persis
 
 	return await _final_cleanup(mesh_instance, persist_ms, parent)
 
-static func square(pos: Vector3, size: Vector3, color = Color.WHITE_SMOKE, persist_ms = 0, parent: Node = null):
+static func square(pos: Vector3, basis: Basis, size: Vector3, color = Color.WHITE_SMOKE, persist_ms = 0, parent: Node = null):
 	var mesh_instance := MeshInstance3D.new()
 	var box_mesh := BoxMesh.new()
 	var material := ORMMaterial3D.new()
 
 	mesh_instance.mesh = box_mesh
 	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	
 	mesh_instance.position = pos
+	mesh_instance.basis = basis
+	
+	#mesh_instance.global_position = pos
+	#mesh_instance.global_basis = basis
 
 	box_mesh.size = size
 	box_mesh.material = material
 
 	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	material.specular_mode = BaseMaterial3D.SPECULAR_DISABLED
+	material.cull_mode = BaseMaterial3D.CULL_FRONT
+	#material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	material.albedo_color = color
+	#material.metallic = 0.0
+	#material.roughness = 0.0
 
 	return await _final_cleanup(mesh_instance, persist_ms, parent)
 

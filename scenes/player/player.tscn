@@ -84,7 +84,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 cull_mask = 2
 
 [node name="right_hand" type="Marker3D" parent="head/camera/SubViewportContainer/SubViewport/sub_camera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.4, -1)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 0.5, -0.39999998, -1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="head/camera/SubViewportContainer/SubViewport/sub_camera/right_hand"]
 layers = 2
@@ -135,7 +135,6 @@ script = ExtResource("9_5gtgg")
 ability_cooldown = NodePath("ability_cooldown")
 raycast = NodePath("../../../head/camera/RayCast3D")
 marker = NodePath("../../../head/camera/SubViewportContainer/SubViewport/sub_camera/right_hand")
-abilities = Array[ExtResource("10_je7p5")]([ExtResource("14_ugbui")])
 projectile = ExtResource("11_gx1jg")
 bullet_trail = ExtResource("12_ugbui")
 metadata/_custom_type_script = "uid://drs3jhc52sjen"

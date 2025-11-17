@@ -3,7 +3,7 @@ extends Resource
 
 @export var ability_name: String = "hatsu"
 @export_enum("on_press", "on_hold", "on_release") var input_type: String = "on_press"
-@export_enum("melee", "hitscan", "projectile") var combat_type: String = "hitscan"
+@export_enum("melee", "hitscan", "projectile", "self") var combat_type: String = "hitscan"
 #@export_enum("hitscan", "projectile") var hit_type: String = "hitscan"
 
 #@export_enum("punch", "beam", "wave", "ball") var type: String = "beam"
@@ -16,7 +16,7 @@ extends Resource
 #@export_range(0, 100) var damage: float = 5  # Damage per hit
 @export_range(0, 100) var damage_min: float = 5  # Damage per hit
 @export_range(0, 100) var damage_max: float = 5  # Damage per hit
-#
+
 @export_range(0, 10) var target_spread: float = 0  # Spread of each shot
 @export_range(0, 5) var spawn_spread: float = 0  # Spread of each shot
 @export_range(1, 10) var shot_count: int = 1  # Amount of shots
