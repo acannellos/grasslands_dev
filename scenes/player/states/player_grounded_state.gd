@@ -1,6 +1,6 @@
 class_name PlayerGroundedState
 extends PlayerState
-#
+
 @export var input: PlayerInput
 @export var grounded: PlayerGrounded
 
@@ -49,6 +49,9 @@ func _exit_state(old_state) -> void:
 			grounded.exit_air()
 
 func state_logic(delta: float) -> void:
+	
+	#print(Enums.get_enum_name(States, state))
+	
 	match state:
 		States.JUMPING:
 			grounded.handle_gravity(delta)

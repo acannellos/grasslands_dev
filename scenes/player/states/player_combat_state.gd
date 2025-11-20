@@ -51,7 +51,7 @@ func enter_state(new_state) -> void:
 
 func state_logic(delta: float) -> void:
 	
-	print(Enums.get_enum_name(States, state))
+	#print(Enums.get_enum_name(States, state))
 	
 	match state:
 		States.ACTING:

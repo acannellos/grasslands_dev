@@ -3,26 +3,22 @@ extends PlayerComponent
 
 @export var coyote_timer: Timer
 @export var jump_buffer_timer: Timer
-#@export var air_acceleration_mod: FloatStatModifier = FloatStatModifier.new(0.5, Enums.StatModType.MULTI_M, Enums.FloatStatType.ACCELERATION)
 
-@export var air_jumps: int = 1
+var air_acceleration_mod: FloatStatModifier = FloatStatModifier.new(0.5, Enums.StatModType.MULTI_M, Enums.FloatStatType.ACCELERATION)
 
 var jump_phase: int = 0
 
 func handle_gravity(delta: float) -> void:
-	#player.velocity.y -= _stats.gravity.value * delta
-	player.velocity.y -= 20.0 * delta
+	player.velocity.y -= _stats.gravity.value * delta
 
 func enter_grounded() -> void:
-	jump_phase = air_jumps
+	jump_phase = _stats.air_jumps.value
 
 func enter_air() -> void:
-	#_stats.add_stat_modifier(air_acceleration_mod)
-	pass
+	_stats.add_stat_modifier(air_acceleration_mod)
 
 func exit_air() -> void:
-	#_stats.remove_stat_modifier(air_acceleration_mod)
-	pass
+	_stats.remove_stat_modifier(air_acceleration_mod)
 
 func handle_jump() -> void:
 	player.velocity.y = 8.0
