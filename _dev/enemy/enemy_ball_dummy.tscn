@@ -112,3 +112,5 @@ material_override = SubResource("ShaderMaterial_m36vg")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_0hgjy")
 script = ExtResource("4_l7bpi")
+
+[node name="Timer" type="Timer" parent="test_enemy_progress_bar"]

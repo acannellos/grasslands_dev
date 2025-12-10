@@ -5,22 +5,19 @@ extends CombatComponent
 @export var raycast: RayCast3D
 @export var marker: Marker3D
 
-@export var projectile: PackedScene
-@export var bullet_trail: PackedScene
-
 @onready var player: Player = get_owner()
 
 func use_ability(ability: Ability) -> void:
+	
+	Draw.point(marker.global_position, 0.05, Color.ALICE_BLUE, 2)
+	
 	match ability.combat_type:
 		"melee":
 			handle_melee(ability)
 		"hitscan":
 			handle_hitscan(ability)
 		"projectile":
-			handle_projectile()
-#
-#func handle_melee() -> void:
-	#Draw.square(marker.global_position, marker.global_basis, Vector3(1, 1, -3), Color.WHITE_SMOKE, 2)
+			handle_projectile(ability)
 
 
 func handle_melee(ability: Ability) -> void:
@@ -84,8 +81,8 @@ func handle_melee(ability: Ability) -> void:
 	)
 
 
-func handle_projectile():
-	var attack = projectile.instantiate()
+func handle_projectile(ability: Ability):
+	var attack = ability.projectile_scene.instantiate()
 	get_tree().root.add_child(attack)
 	attack.global_transform = marker.global_transform
 

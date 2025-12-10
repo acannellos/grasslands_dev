@@ -13,7 +13,8 @@ extends PlayerState
 #
 #@export var slide_camera_lerp_speed: float = 8.0
 #
-enum States {IDLE, RUNNING, SPRINTING, SLIDING, DODGING, DEBUG}
+#enum States {IDLE, RUNNING, SPRINTING, SLIDING, DODGING, DEBUG}
+enum States {IDLE, RUNNING, DODGING, FLYING, DEBUG}
 #
 func _ready():
 	set_state(States.IDLE)
@@ -60,6 +61,9 @@ func get_transition():
 			#col.disabled = false
 #
 func state_logic(delta: float) -> void:
+	
+	#print(Enums.get_enum_name(States, state))
+	
 	#head.lerp_head(1.5, slide_camera_lerp_speed * delta)
 	match state:
 		States.IDLE:

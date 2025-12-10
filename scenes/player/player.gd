@@ -1,10 +1,10 @@
 class_name Player
 extends CharacterBody3D
-#
+
 @export var data: PlayerData = PlayerData.new()
-@export var abilities: Array[Ability] = []
+#@export var abilities: Array[Ability] = []
 #
-#@export_category("components")
+@export_group("Components")
 #@export var input: PlayerInput
 @export var head: PlayerHead
 #@export var pools: PlayerPools
@@ -28,7 +28,8 @@ func _physics_process(delta: float) -> void:
 	#pools.handle_pools(delta)
 	##controller.handle_controller(delta)
 	#head.handle_controller_input(delta)
-	head.move_sub_camera()
+	#head.move_sub_camera()
+	pass
 #
 #func use_slot_data(slot_data: ItemSlotData) -> void:
 	#slot_data.item_data.use(self)

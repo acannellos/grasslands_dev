@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcvgpv2dm4k6a"]
+[gd_scene load_steps=10 format=3 uid="uid://bcvgpv2dm4k6a"]
 
-[ext_resource type="Script" uid="uid://dvtaf5ikr5oa7" path="res://_dev/vfx/dev_lifetime.gd" id="1_y2kuu"]
+[ext_resource type="Script" uid="uid://b7fm8m401ua40" path="res://_dev/combat/dev_projectile_area.gd" id="1_y2kuu"]
 [ext_resource type="Texture2D" uid="uid://d27u27eufctiy" path="res://_dev/vfx/gradient_trail_blue.tres" id="2_y2kuu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2kuu"]
@@ -36,10 +36,12 @@ shape = 0
 size = 0.5
 curve = SubResource("Curve_syvtc")
 
-[node name="bullet_trail" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_y2kuu"]
+radius = 0.2
+
+[node name="bullet_trail" type="Area3D"]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_y2kuu")
-lifetime = 1.0
 
 [node name="particle_trail_l" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_y2kuu")
@@ -59,3 +61,6 @@ trail_enabled = true
 trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_uh6sn")
 draw_pass_1 = SubResource("RibbonTrailMesh_ciobv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_y2kuu")

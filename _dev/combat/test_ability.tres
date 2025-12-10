@@ -4,8 +4,5 @@
 
 [resource]
 script = ExtResource("1_5kktx")
-input_type = "on_hold"
-damage_min = 1.0
-damage_max = 1.0
-spawn_spread = 0.2
+combat_type = "projectile"
 metadata/_custom_type_script = "uid://dn2w4fo0bxkpw"

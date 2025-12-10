@@ -4,6 +4,8 @@ var data: EnemyData
 var health: PoolStat
 @export var bar: ProgressBar3D
 
+@export var heath_bar_timer: Timer
+
 #@export var health := 10
 #@export var damage_label: PackedScene
 

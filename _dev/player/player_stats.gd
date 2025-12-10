@@ -13,7 +13,7 @@ extends Stats
 
 @export_group("controller")
 @export var can_move: BoolStat = BoolStat.new(true, Enums.BoolStatType.CAN_MOVE)
-@export var speed: FloatStat = FloatStat.new(16.0, Enums.FloatStatType.SPEED)
+@export var speed: FloatStat = FloatStat.new(8.0, Enums.FloatStatType.SPEED)
 @export var acceleration: FloatStat = FloatStat.new(0.25, Enums.FloatStatType.ACCELERATION)
 
 @export_group("grounded")

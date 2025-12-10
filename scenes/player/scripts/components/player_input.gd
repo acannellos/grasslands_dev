@@ -10,6 +10,10 @@ var input_dir: Vector2
 #var has_dodge: bool = false
 var has_jump: bool = false
 
+var is_primary_just_pressed: bool = false
+var is_primary_pressed: bool = false
+var is_primary_just_released: bool = false
+
 func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("debug_no_clip"):
@@ -42,11 +46,6 @@ func _physics_process(_delta: float) -> void:
 	#if Input.is_action_just_pressed("interact"):
 		#pass
 
-	#if Input.is_action_just_pressed("primary"):
-		#print("on_press")
-#
-	#if Input.is_action_pressed("primary"):
-		#print("on_hold")
-	#
-	#if Input.is_action_just_released("primary"):
-		#print("on_release")
+	is_primary_just_pressed = Input.is_action_just_pressed("primary")
+	is_primary_pressed = Input.is_action_pressed("primary")
+	is_primary_just_released = Input.is_action_just_released("primary")

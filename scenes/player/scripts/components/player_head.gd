@@ -11,8 +11,6 @@ var sensitivity: float = 0.001
 #var prev_t : Transform3D
 #var current_t : Transform3D
 
-func move_sub_camera() -> void:
-	sub_camera.global_transform = camera.global_transform
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

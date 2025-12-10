@@ -10,7 +10,13 @@ extends Resource
 #@export var is_rapid: bool = false
 #@export var can_charge: bool = false
 
-#@export_subgroup("Properties")
+@export_subgroup("Model")
+@export var model: PackedScene # Model of the weapon
+@export var position: Vector3 # On-screen position
+@export var rotation: Vector3 # On-screen rotation
+@export var muzzle_position: Vector3 # On-screen position of muzzle flash
+
+@export_subgroup("Properties")
 @export_range(0.1, 5) var cooldown: float = 0.1  # Firerate
 @export_range(1, 200) var max_distance: int = 100  # Fire distance
 #@export_range(0, 100) var damage: float = 5  # Damage per hit
@@ -22,7 +28,9 @@ extends Resource
 @export_range(1, 10) var shot_count: int = 1  # Amount of shots
 @export_range(0, 100) var knockback: int = 0  # Amount of knockback
 
-#@export_subgroup("other")
+@export_subgroup("other")
+@export var projectile_scene: PackedScene
+#@export var bullet_trail_scene: PackedScene
 #@export var sound_shoot: String  # Sound path
 #@export var ability_texture: Texture2D
 #@export var crosshair: Texture2D  # Image of crosshair on-screen

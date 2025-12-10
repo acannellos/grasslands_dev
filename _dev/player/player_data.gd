@@ -5,3 +5,4 @@ extends Resource
 @export var stats: PlayerStats = PlayerStats.new()
 #@export var inventory: InventoryData = InventoryData.new()
 #@export var equipment: InventoryDataEquip = InventoryDataEquip.new()
+@export var abilities: Array[Ability] = []

@@ -47,34 +47,3 @@ func set_progress(target: float):
 		mat.set_shader_parameter("value", target)
 		var tw := get_tree().create_tween()
 		tw.tween_method(func(v): mat.set_shader_parameter("lag_value", v), current_lag, target, tween_speed)
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#func set_progress(target: float):
-	#if not is_inside_tree():
-		#return
-	#if mat == null:
-		#set_mat()
-#
-	#target = clamp(target, 0.0, 1.0)
-	#current_value = target  # this is the "logical" progress
-#
-	#var current_bar = mat.get_shader_parameter("value")
-	#var current_lag = mat.get_shader_parameter("lag_value")
-#
-	#tw = get_tree().create_tween()
-#
-	#if target > current_bar:
-		## Increasing: lag_value jumps to target instantly, bar tweens from current_bar to target
-		#mat.set_shader_parameter("lag_value", target)
-		#tw.tween_method(func(v): mat.set_shader_parameter("value", v), current_bar, target, tween_speed)
-	#elif target < current_bar:
-		## Decreasing: value jumps to target instantly, lag_value tweens from current_lag to target
-		#mat.set_shader_parameter("value", target)
-		#tw.tween_method(func(v): mat.set_shader_parameter("lag_value", v), current_lag, target, tween_speed)
