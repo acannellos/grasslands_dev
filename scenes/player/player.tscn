@@ -70,7 +70,7 @@ layers = 3
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_8afob")
 
-[node name="ray_horizon" type="RayCast3D" parent="head/camera"]
+[node name="ray_ability" type="RayCast3D" parent="head/camera"]
 target_position = Vector3(0, 0, -100)
 
 [node name="remote_sub_camera" type="RemoteTransform3D" parent="head/camera"]
@@ -94,7 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 cull_mask = 2
 
 [node name="right_hand" type="Marker3D" parent="head/camera/svc/sv/sub_camera"]
-transform = Transform3D(0.99984765, 0, 0.017452404, 0, 1, 0, -0.017452404, 0, 0.99984765, 0.5, -0.39999998, -1)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.5, -0.39999998, -1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="head/camera/svc/sv/sub_camera/right_hand"]
 layers = 2
@@ -156,7 +156,7 @@ metadata/_custom_type_script = "uid://d4hct20o52k3r"
 [node name="PlayerCombat" type="Node" parent="states/PlayerCombatState" node_paths=PackedStringArray("ability_cooldown", "raycast", "marker")]
 script = ExtResource("9_5gtgg")
 ability_cooldown = NodePath("ability_cooldown")
-raycast = NodePath("../../../head/camera/ray_horizon")
+raycast = NodePath("../../../head/camera/ray_ability")
 marker = NodePath("../../../head/camera/svc/sv/sub_camera/right_hand")
 metadata/_custom_type_script = "uid://drs3jhc52sjen"
 

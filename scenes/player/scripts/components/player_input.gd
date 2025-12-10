@@ -14,6 +14,8 @@ var is_primary_just_pressed: bool = false
 var is_primary_pressed: bool = false
 var is_primary_just_released: bool = false
 
+var ability_index: int = 0
+
 func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("debug_no_clip"):
@@ -49,3 +51,27 @@ func _physics_process(_delta: float) -> void:
 	is_primary_just_pressed = Input.is_action_just_pressed("primary")
 	is_primary_pressed = Input.is_action_pressed("primary")
 	is_primary_just_released = Input.is_action_just_released("primary")
+
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
+			ability_index = (ability_index + 1) % player.data.abilities.size()
+			Events.player_ability_changed.emit(ability_index)
+		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
+			ability_index = (ability_index - 1)
+			if ability_index < 0:
+				ability_index = player.data.abilities.size() - 1
+			Events.player_ability_changed.emit(ability_index)
+
+#func change_ability() -> void:
+	#if Input.is_action_just_pressed("ability_next"):
+		#ability_index = (ability_index + 1) % player.data.abilities.size()
+		#set_ability(ability_index)
+	#
+	#if Input.is_action_just_pressed("ability_prev"):
+		#ability_index = (ability_index - 1)
+		#if ability_index < 0:
+			#ability_index = player.data.abilities.size() - 1
+		#set_ability(ability_index)

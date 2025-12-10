@@ -85,6 +85,7 @@ func handle_projectile(ability: Ability):
 	var attack = ability.projectile_scene.instantiate()
 	get_tree().root.add_child(attack)
 	attack.global_transform = marker.global_transform
+	attack.look_at(raycast.to_global(raycast.target_position))
 
 func handle_hitscan(ability: Ability):
 	

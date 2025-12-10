@@ -7,11 +7,11 @@ extends PlayerState
 enum States {IDLE, CHARGING, CHARGED, ACTING, COOLDOWN}
 
 var ability: Ability
-var ability_index: int = 0
 
 func _ready():
-	set_ability(ability_index)
+	set_ability(0)
 	set_state(States.IDLE)
+	Events.player_ability_changed.connect(set_ability)
 
 func get_transition():
 	match state:
@@ -60,29 +60,5 @@ func state_logic(delta: float) -> void:
 
 func set_ability(index: int) -> void:
 	ability = player.data.abilities[index]
-	#Events.player_ability_changed.emit()
+	print(player.data.abilities[index].ability_name)
 	#Audio.play("sounds/weapon_change.ogg")
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
-			ability_index = (ability_index + 1) % player.data.abilities.size()
-			set_ability(ability_index)
-			print(player.data.abilities[ability_index].ability_name)
-		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
-			ability_index = (ability_index - 1)
-			if ability_index < 0:
-				ability_index = player.data.abilities.size() - 1
-			set_ability(ability_index)
-			print(player.data.abilities[ability_index].ability_name)
-
-#func change_ability() -> void:
-	#if Input.is_action_just_pressed("ability_next"):
-		#ability_index = (ability_index + 1) % player.data.abilities.size()
-		#set_ability(ability_index)
-	#
-	#if Input.is_action_just_pressed("ability_prev"):
-		#ability_index = (ability_index - 1)
-		#if ability_index < 0:
-			#ability_index = player.data.abilities.size() - 1
-		#set_ability(ability_index)
