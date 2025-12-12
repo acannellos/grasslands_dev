@@ -5,7 +5,7 @@ var lifetime: float = 10.0
 
 var og_pos: Vector3
 
-var my_gravity: float = 10.0
+@export var my_gravity: float = 10.0
 var vertical_velocity: float = 0.0 
 
 func _ready():

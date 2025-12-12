@@ -3,7 +3,7 @@ extends Resource
 
 @export var ability_name: String = "hatsu"
 @export_enum("on_press", "on_hold", "on_release") var input_type: String = "on_press"
-@export_enum("melee", "hitscan", "projectile", "self") var combat_type: String = "hitscan"
+@export_enum("melee", "hitscan", "projectile", "self", "spawn") var combat_type: String = "hitscan"
 #@export_enum("hitscan", "projectile") var hit_type: String = "hitscan"
 
 #@export_enum("punch", "beam", "wave", "ball") var type: String = "beam"
@@ -30,6 +30,7 @@ extends Resource
 
 @export_subgroup("other")
 @export var projectile_scene: PackedScene
+@export var spawn_scene: PackedScene
 #@export var bullet_trail_scene: PackedScene
 #@export var sound_shoot: String  # Sound path
 #@export var ability_texture: Texture2D

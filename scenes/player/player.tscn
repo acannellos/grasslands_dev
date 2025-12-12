@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://yrxnx8s4qebt"]
+[gd_scene load_steps=24 format=3 uid="uid://yrxnx8s4qebt"]
 
 [ext_resource type="Script" uid="uid://bdbp8tsexxhog" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Shader" uid="uid://pvf08hg8b2bn" path="res://shaders/outline.gdshader" id="2_dovo2"]
@@ -10,15 +10,17 @@
 [ext_resource type="Script" uid="uid://ccr40ys6dd5ls" path="res://scenes/player/scripts/states/player_grounded_state.gd" id="4_75vfm"]
 [ext_resource type="Script" uid="uid://qkjjj5aypdty" path="res://_dev/player/player_data.gd" id="4_fcs02"]
 [ext_resource type="Resource" uid="uid://boemkdelq3032" path="res://scenes/player/data/abilities/ability_ball.tres" id="4_myrg7"]
+[ext_resource type="Resource" uid="uid://bd3hj71q6sil1" path="res://scenes/player/data/abilities/ability_spawn.tres" id="5_kvlxm"]
 [ext_resource type="Texture2D" uid="uid://psj2cm1m88ec" path="res://scenes/player/assets/textures/blob_shadow.tres" id="6_ugbui"]
 [ext_resource type="Script" uid="uid://5e4dlwxbu3mw" path="res://scenes/player/scripts/components/player_grounded.gd" id="7_0owmy"]
+[ext_resource type="Script" uid="uid://ce278rc11myis" path="res://_dev/player/player_right_hand.gd" id="8_myrg7"]
 [ext_resource type="Script" uid="uid://d4hct20o52k3r" path="res://scenes/player/scripts/states/player_combat_state.gd" id="8_ugbui"]
 [ext_resource type="Script" uid="uid://drs3jhc52sjen" path="res://_dev/combat/player_combat_component.gd" id="9_5gtgg"]
 [ext_resource type="Script" uid="uid://dn2w4fo0bxkpw" path="res://_dev/combat/ability_data.gd" id="10_je7p5"]
 
 [sub_resource type="Resource" id="Resource_myrg7"]
 script = ExtResource("4_fcs02")
-abilities = Array[ExtResource("10_je7p5")]([ExtResource("3_fcs02"), ExtResource("4_myrg7")])
+abilities = Array[ExtResource("10_je7p5")]([ExtResource("3_fcs02"), ExtResource("4_myrg7"), ExtResource("5_kvlxm")])
 metadata/_custom_type_script = "uid://qkjjj5aypdty"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
@@ -82,6 +84,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch = true
 
 [node name="sv" type="SubViewport" parent="head/camera/svc"]
 transparent_bg = true
@@ -96,10 +99,12 @@ cull_mask = 2
 [node name="right_hand" type="Marker3D" parent="head/camera/svc/sv/sub_camera"]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.5, -0.39999998, -1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="head/camera/svc/sv/sub_camera/right_hand"]
+[node name="right_hand_mesh" type="MeshInstance3D" parent="head/camera/svc/sv/sub_camera/right_hand" node_paths=PackedStringArray("input")]
 layers = 2
 extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_je7p5")
+script = ExtResource("8_myrg7")
+input = NodePath("../../../../../../../components/PlayerInput")
 
 [node name="feet" type="Node3D" parent="."]
 

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://bd3hj71q6sil1"]
+
+[ext_resource type="Script" uid="uid://dn2w4fo0bxkpw" path="res://_dev/combat/ability_data.gd" id="1_go27r"]
+[ext_resource type="PackedScene" uid="uid://dcvx6fbs433rj" path="res://_dev/enemy/enemy_ball_dummy.tscn" id="2_q34dj"]
+
+[resource]
+script = ExtResource("1_go27r")
+ability_name = "spawn"
+combat_type = "spawn"
+spawn_scene = ExtResource("2_q34dj")
+metadata/_custom_type_script = "uid://dn2w4fo0bxkpw"

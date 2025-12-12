@@ -37,11 +37,12 @@ size = 0.5
 curve = SubResource("Curve_syvtc")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y2kuu"]
-radius = 0.2
+radius = 0.4
 
 [node name="bullet_trail" type="Area3D"]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_y2kuu")
+my_gravity = 2.0
 
 [node name="particle_trail_l" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_y2kuu")

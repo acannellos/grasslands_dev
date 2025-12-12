@@ -1,9 +1,6 @@
-extends Marker3D
+extends MeshInstance3D
 
 @export var input: PlayerInput
-
-@onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
-
 
 var rotation_multiplier: float = 0.2
 var smooth_speed: float = 5.0
@@ -21,9 +18,8 @@ func _ready() -> void:
 	#Events.player_dodge_used.connect(_on_player_dodge_used)
 
 func _physics_process(delta: float) -> void:
-	#_update_rotation(delta)
-	#_update_sway(delta)
-	pass
+	_update_rotation(delta)
+	_update_sway(delta)
 
 func _update_rotation(delta: float) -> void:
 	var target_rotation: Vector3 = original_rotation
@@ -42,6 +38,6 @@ func _update_sway(delta: float) -> void:
 		position = lerp(position, base_position, delta * smooth_speed)
 
 #func _on_player_dodge_used() -> void:
-	#mesh_instance_3d.transparency = 0.5
+	#transparency = 0.5
 	#await get_tree().create_timer(0.3).timeout
-	#mesh_instance_3d.transparency = 0.0
+	#transparency = 0.0

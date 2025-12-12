@@ -18,6 +18,8 @@ func use_ability(ability: Ability) -> void:
 			handle_hitscan(ability)
 		"projectile":
 			handle_projectile(ability)
+		"spawn":
+			handle_spawn(ability)
 
 
 func handle_melee(ability: Ability) -> void:
@@ -138,3 +140,16 @@ func handle_hitscan(ability: Ability):
 		#_trail.global_position = end_pos
 		
 		#head.sway_z(ability.knockback * 100)
+
+
+func handle_spawn(ability: Ability):
+	
+	raycast.target_position.z = -ability.max_distance
+		
+	raycast.force_raycast_update()
+		
+	if raycast.is_colliding():
+		var spawn = ability.spawn_scene.instantiate()
+		get_tree().root.add_child(spawn)
+		spawn.global_position = raycast.get_collision_point() + Vector3(0,1,0)
+		

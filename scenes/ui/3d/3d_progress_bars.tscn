@@ -18,6 +18,7 @@ size = Vector2(5, 0.6)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sd31"]
 shading_mode = 0
 albedo_color = Color(0.58000004, 0.94400007, 1, 1)
+stencil_flags = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_rixwf"]
 material = SubResource("StandardMaterial3D_1sd31")

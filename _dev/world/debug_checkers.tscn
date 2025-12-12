@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkr0g3rexptq6"]
+[gd_scene load_steps=11 format=3 uid="uid://dkr0g3rexptq6"]
 
 [ext_resource type="PackedScene" uid="uid://g2ulvmaq7dfi" path="res://scenes/ui/ui_2d.tscn" id="1_a83pb"]
+[ext_resource type="PackedScene" uid="uid://mybhwtfghqby" path="res://scenes/ui/ui_3d.tscn" id="2_stjk2"]
 [ext_resource type="PackedScene" uid="uid://dlfg5inwjswqp" path="res://scenes/world/env/env.tscn" id="2_u31gi"]
 [ext_resource type="PackedScene" uid="uid://yrxnx8s4qebt" path="res://scenes/player/player.tscn" id="3_stjk2"]
 [ext_resource type="PackedScene" uid="uid://dcvx6fbs433rj" path="res://_dev/enemy/enemy_ball_dummy.tscn" id="4_u31gi"]
@@ -25,6 +26,8 @@ data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100,
 [node name="debug_checkers" type="Node3D"]
 
 [node name="ui_2d" parent="." instance=ExtResource("1_a83pb")]
+
+[node name="ui_3d" parent="." instance=ExtResource("2_stjk2")]
 
 [node name="world" type="Node3D" parent="."]
 
